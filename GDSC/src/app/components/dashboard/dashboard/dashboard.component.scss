@@ -1,0 +1,71 @@
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.sidebar {
+  .card {
+    position: sticky;
+    top: 20px;
+  }
+
+  .nav-link {
+    color: #495057;
+    padding: 12px 20px;
+    border-radius: 0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #e9ecef;
+      color: #495057;
+    }
+
+    &.active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    i {
+      width: 20px;
+    }
+  }
+}
+
+.main-content {
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .display-6 {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+
+  .fa-3x {
+    font-size: 3em;
+  }
+}
+
+.alert {
+  border-radius: 8px;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    margin-bottom: 20px;
+    
+    .card {
+      position: static;
+    }
+  }
+}

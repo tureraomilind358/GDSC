@@ -1,0 +1,25 @@
+<mat-card class="app-card" [class]="'elevation-' + elevation">
+  <div class="card-header" *ngIf="showHeader">
+    <div class="header-content" *ngIf="!loading">
+      <h3 class="card-title" *ngIf="title">{{ title }}</h3>
+      <p class="card-subtitle" *ngIf="subtitle">{{ subtitle }}</p>
+    </div>
+    <div class="header-skeleton" *ngIf="loading">
+      <div class="title-skeleton"></div>
+      <div class="subtitle-skeleton"></div>
+    </div>
+  </div>
+
+  <mat-card-content class="card-content">
+    <div class="content-skeleton" *ngIf="loading">
+      <div class="line-skeleton"></div>
+      <div class="line-skeleton"></div>
+      <div class="line-skeleton short"></div>
+    </div>
+    <ng-content *ngIf="!loading"></ng-content>
+  </mat-card-content>
+
+  <mat-card-actions class="card-actions" *ngIf="showFooter">
+    <ng-content select="[card-actions]"></ng-content>
+  </mat-card-actions>
+</mat-card>

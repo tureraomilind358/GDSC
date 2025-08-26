@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidebar-container">
+  <mat-sidenav 
+    #drawer 
+    class="sidebar" 
+    [mode]="'side'" 
+    [opened]="isOpen"
+    [fixedInViewport]="true"
+    [disableClose]="false">
+    
+    <div class="sidebar-header">
+      <div class="user-info" *ngIf="currentUser">
+        <div class="avatar">
+          <mat-icon>account_circle</mat-icon>
+        </div>
+        <div class="user-details">
+          <h4>{{ currentUser.firstName }} {{ currentUser.lastName }}</h4>
+          <p>{{ currentUser.roles.join(', ') }}</p>
+        </div>
+      </div>
+    </div>
+
+    <mat-nav-list class="sidebar-menu">
+      <a mat-list-item 
+         *ngFor="let item of menuItems" 
+         [routerLink]="item.route"
+         class="menu-item"
+         [routerLinkActive]="'active'">
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        <span matListItemTitle>{{ item.label }}</span>
+      </a>
+    </mat-nav-list>
+
+    <div class="sidebar-footer">
+      <button mat-button (click)="onToggleSidebar()" class="close-btn">
+        <mat-icon>close</mat-icon>
+        Close
+      </button>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidebar-content">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

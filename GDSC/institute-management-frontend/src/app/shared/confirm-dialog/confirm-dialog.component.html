@@ -1,0 +1,22 @@
+<div class="confirm-dialog">
+  <div class="dialog-header">
+    <h2 mat-dialog-title>{{ data.title }}</h2>
+  </div>
+
+  <div class="dialog-content">
+    <p mat-dialog-content>{{ data.message }}</p>
+  </div>
+
+  <div class="dialog-actions">
+    <button mat-button (click)="onCancel()" class="cancel-btn">
+      {{ data.cancelText || 'Cancel' }}
+    </button>
+    <button 
+      mat-raised-button 
+      [color]="data.type === 'danger' ? 'warn' : 'primary'"
+      (click)="onConfirm()"
+      class="confirm-btn">
+      {{ data.confirmText || 'Confirm' }}
+    </button>
+  </div>
+</div>

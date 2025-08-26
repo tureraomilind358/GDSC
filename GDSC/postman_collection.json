@@ -1,0 +1,857 @@
+{
+  "info": {
+    "name": "Institute Management System",
+    "description": "Complete API collection for Institute Management System backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api",
+      "type": "string"
+    },
+    {
+      "key": "jwtToken",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwtToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
+            }
+          }
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"newuser\",\n  \"email\": \"user@example.com\",\n  \"password\": \"password123\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\": \"+1234567890\",\n  \"roles\": [\"STUDENT\"]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwtToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/refresh",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "refresh"]
+            }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwtToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/logout",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "logout"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Course Categories",
+      "item": [
+        {
+          "name": "Get All Categories",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/course-categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["course-categories"]
+            }
+          }
+        },
+        {
+          "name": "Get Category by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/course-categories/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["course-categories", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Information Technology\",\n  \"description\": \"IT related courses\",\n  \"icon\": \"fas fa-laptop-code\",\n  \"color\": \"#007bff\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/course-categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["course-categories"]
+            }
+          }
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Information Technology Updated\",\n  \"description\": \"Updated IT related courses\",\n  \"icon\": \"fas fa-laptop-code\",\n  \"color\": \"#28a745\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/course-categories/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["course-categories", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/course-categories/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["course-categories", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Courses",
+      "item": [
+        {
+          "name": "Get All Courses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/courses",
+              "host": ["{{baseUrl}}"],
+              "path": ["courses"]
+            }
+          }
+        },
+        {
+          "name": "Get Course by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/courses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["courses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Course",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Java Programming\",\n  \"description\": \"Learn Java from basics to advanced\",\n  \"image\": \"java-course.jpg\",\n  \"platforms\": [\"Online\", \"Classroom\"],\n  \"duration\": \"3 months\",\n  \"fees\": 299.99,\n  \"discount\": 10.0,\n  \"maxStudents\": 50,\n  \"categoryId\": 1,\n  \"centerId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/courses",
+              "host": ["{{baseUrl}}"],
+              "path": ["courses"]
+            }
+          }
+        },
+        {
+          "name": "Update Course",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Java Programming Advanced\",\n  \"description\": \"Advanced Java programming course\",\n  \"image\": \"java-advanced.jpg\",\n  \"platforms\": [\"Online\", \"Classroom\"],\n  \"duration\": \"4 months\",\n  \"fees\": 399.99,\n  \"discount\": 15.0,\n  \"maxStudents\": 40,\n  \"categoryId\": 1,\n  \"centerId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/courses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["courses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Course",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/courses/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["courses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Courses by Category",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/courses/category/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["courses", "category", "1"]
+            }
+          }
+        },
+        {
+          "name": "Search Courses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/courses/search?keyword=java",
+              "host": ["{{baseUrl}}"],
+              "path": ["courses", "search"],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "java"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Students",
+      "item": [
+        {
+          "name": "Get All Students",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/students",
+              "host": ["{{baseUrl}}"],
+              "path": ["students"]
+            }
+          }
+        },
+        {
+          "name": "Get Student by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/students/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Student",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Jane\",\n  \"lastName\": \"Smith\",\n  \"email\": \"jane@example.com\",\n  \"phone\": \"+1234567890\",\n  \"dateOfBirth\": \"2000-01-01\",\n  \"gender\": \"FEMALE\",\n  \"address\": \"123 Main St\",\n  \"city\": \"New York\",\n  \"state\": \"NY\",\n  \"zipCode\": \"10001\",\n  \"enrollmentDate\": \"2024-01-15\",\n  \"centerId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/students",
+              "host": ["{{baseUrl}}"],
+              "path": ["students"]
+            }
+          }
+        },
+        {
+          "name": "Update Student",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Jane Updated\",\n  \"lastName\": \"Smith\",\n  \"email\": \"jane.updated@example.com\",\n  \"phone\": \"+1234567890\",\n  \"dateOfBirth\": \"2000-01-01\",\n  \"gender\": \"FEMALE\",\n  \"address\": \"123 Main St Updated\",\n  \"city\": \"New York\",\n  \"state\": \"NY\",\n  \"zipCode\": \"10001\",\n  \"enrollmentDate\": \"2024-01-15\",\n  \"centerId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/students/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Student",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/students/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", "1"]
+            }
+          }
+        },
+        {
+          "name": "Search Students",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/students/search?keyword=jane",
+              "host": ["{{baseUrl}}"],
+              "path": ["students", "search"],
+              "query": [
+                {
+                  "key": "keyword",
+                  "value": "jane"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Teachers",
+      "item": [
+        {
+          "name": "Get All Teachers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/teachers",
+              "host": ["{{baseUrl}}"],
+              "path": ["teachers"]
+            }
+          }
+        },
+        {
+          "name": "Get Teacher by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/teachers/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["teachers", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Teacher",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Dr. Robert\",\n  \"lastName\": \"Johnson\",\n  \"email\": \"robert@example.com\",\n  \"phone\": \"+1234567890\",\n  \"dateOfBirth\": \"1980-05-15\",\n  \"gender\": \"MALE\",\n  \"address\": \"456 Oak Ave\",\n  \"city\": \"Boston\",\n  \"state\": \"MA\",\n  \"zipCode\": \"02101\",\n  \"hireDate\": \"2020-08-01\",\n  \"expertise\": \"Computer Science\",\n  \"qualification\": \"Ph.D. Computer Science\",\n  \"experience\": 10,\n  \"salary\": 75000.00,\n  \"centerId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/teachers",
+              "host": ["{{baseUrl}}"],
+              "path": ["teachers"]
+            }
+          }
+        },
+        {
+          "name": "Get Teacher Courses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/teachers/1/courses",
+              "host": ["{{baseUrl}}"],
+              "path": ["teachers", "1", "courses"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Centers",
+      "item": [
+        {
+          "name": "Get All Centers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/centers",
+              "host": ["{{baseUrl}}"],
+              "path": ["centers"]
+            }
+          }
+        },
+        {
+          "name": "Get Center by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/centers/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["centers", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Center",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Main Campus\",\n  \"code\": \"MC001\",\n  \"address\": \"789 University Blvd\",\n  \"city\": \"Chicago\",\n  \"state\": \"IL\",\n  \"zipCode\": \"60601\",\n  \"phone\": \"+1234567890\",\n  \"email\": \"main@institute.com\",\n  \"capacity\": 500,\n  \"status\": \"ACTIVE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/centers",
+              "host": ["{{baseUrl}}"],
+              "path": ["centers"]
+            }
+          }
+        },
+        {
+          "name": "Get Center Students",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/centers/1/students",
+              "host": ["{{baseUrl}}"],
+              "path": ["centers", "1", "students"]
+            }
+          }
+        },
+        {
+          "name": "Get Center Teachers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/centers/1/teachers",
+              "host": ["{{baseUrl}}"],
+              "path": ["centers", "1", "teachers"]
+            }
+          }
+        },
+        {
+          "name": "Get Center Courses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/centers/1/courses",
+              "host": ["{{baseUrl}}"],
+              "path": ["centers", "1", "courses"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Enquiries",
+      "item": [
+        {
+          "name": "Get All Enquiries",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/enquiries",
+              "host": ["{{baseUrl}}"],
+              "path": ["enquiries"]
+            }
+          }
+        },
+        {
+          "name": "Create Enquiry",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Mike\",\n  \"lastName\": \"Wilson\",\n  \"email\": \"mike@example.com\",\n  \"phone\": \"+1234567890\",\n  \"interestedCourseId\": 1,\n  \"source\": \"WEBSITE\",\n  \"message\": \"I'm interested in learning Java programming\",\n  \"centerId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/enquiries",
+              "host": ["{{baseUrl}}"],
+              "path": ["enquiries"]
+            }
+          }
+        },
+        {
+          "name": "Get Enquiries by Status",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/enquiries/status/NEW",
+              "host": ["{{baseUrl}}"],
+              "path": ["enquiries", "status", "NEW"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fees & Payments",
+      "item": [
+        {
+          "name": "Get All Fees",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/fees",
+              "host": ["{{baseUrl}}"],
+              "path": ["fees"]
+            }
+          }
+        },
+        {
+          "name": "Create Fee",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"courseId\": 1,\n  \"studentId\": 1,\n  \"totalAmount\": 299.99,\n  \"discount\": 10.0,\n  \"dueDate\": \"2024-02-15\",\n  \"centerId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/fees",
+              "host": ["{{baseUrl}}"],
+              "path": ["fees"]
+            }
+          }
+        },
+        {
+          "name": "Get Student Fees",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/fees/student/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["fees", "student", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Payment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"feeId\": 1,\n  \"amount\": 150.00,\n  \"method\": \"ONLINE\",\n  \"transactionId\": \"TXN123456\",\n  \"centerId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/fees/payments",
+              "host": ["{{baseUrl}}"],
+              "path": ["fees", "payments"]
+            }
+          }
+        },
+        {
+          "name": "Process Payment",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/fees/payments/1/process",
+              "host": ["{{baseUrl}}"],
+              "path": ["fees", "payments", "1", "process"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Exams",
+      "item": [
+        {
+          "name": "Get All Exams",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/exams",
+              "host": ["{{baseUrl}}"],
+              "path": ["exams"]
+            }
+          }
+        },
+        {
+          "name": "Create Exam",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Java Midterm Exam\",\n  \"description\": \"Midterm examination for Java Programming course\",\n  \"courseId\": 1,\n  \"examDate\": \"2024-02-20T10:00:00\",\n  \"duration\": 120,\n  \"type\": \"MIDTERM\",\n  \"totalMarks\": 100,\n  \"isOnline\": true,\n  \"centerId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/exams",
+              "host": ["{{baseUrl}}"],
+              "path": ["exams"]
+            }
+          }
+        },
+        {
+          "name": "Get Exam Questions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/exams/1/questions",
+              "host": ["{{baseUrl}}"],
+              "path": ["exams", "1", "questions"]
+            }
+          }
+        },
+        {
+          "name": "Add Question",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"What is the main method signature in Java?\",\n  \"type\": \"MCQ\",\n  \"marks\": 5,\n  \"difficulty\": \"EASY\",\n  \"topic\": \"Java Basics\",\n  \"correctAnswer\": \"public static void main(String[] args)\",\n  \"explanation\": \"The main method must be public, static, void, and take String array parameter\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/exams/1/questions",
+              "host": ["{{baseUrl}}"],
+              "path": ["exams", "1", "questions"]
+            }
+          }
+        },
+        {
+          "name": "Submit Exam",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"answers\": [\n    {\n      \"questionId\": 1,\n      \"studentAnswer\": \"public static void main(String[] args)\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/exams/1/submit",
+              "host": ["{{baseUrl}}"],
+              "path": ["exams", "1", "submit"]
+            }
+          }
+        },
+        {
+          "name": "Evaluate Exam",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/exams/1/evaluate",
+              "host": ["{{baseUrl}}"],
+              "path": ["exams", "1", "evaluate"]
+            }
+          }
+        },
+        {
+          "name": "Get Exam Results",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/exams/1/results",
+              "host": ["{{baseUrl}}"],
+              "path": ["exams", "1", "results"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Certifications",
+      "item": [
+        {
+          "name": "Get All Certifications",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/certifications",
+              "host": ["{{baseUrl}}"],
+              "path": ["certifications"]
+            }
+          }
+        },
+        {
+          "name": "Create Certification",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": 1,\n  \"courseId\": 1,\n  \"issueDate\": \"2024-02-15\",\n  \"expiryDate\": \"2027-02-15\",\n  \"grade\": \"A\",\n  \"centerId\": 1\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/certifications",
+              "host": ["{{baseUrl}}"],
+              "path": ["certifications"]
+            }
+          }
+        },
+        {
+          "name": "Generate Certificate",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/certifications/1/generate",
+              "host": ["{{baseUrl}}"],
+              "path": ["certifications", "1", "generate"]
+            }
+          }
+        },
+        {
+          "name": "Download Certificate",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/certifications/1/download",
+              "host": ["{{baseUrl}}"],
+              "path": ["certifications", "1", "download"]
+            }
+          }
+        },
+        {
+          "name": "Verify Certificate (Public)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/certifications/verify/CERT123?studentName=John&courseName=Java",
+              "host": ["{{baseUrl}}"],
+              "path": ["certifications", "verify", "CERT123"],
+              "query": [
+                {
+                  "key": "studentName",
+                  "value": "John"
+                },
+                {
+                  "key": "courseName",
+                  "value": "Java"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

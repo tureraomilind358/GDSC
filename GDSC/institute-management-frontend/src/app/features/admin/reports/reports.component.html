@@ -1,0 +1,430 @@
+<div class="reports-container">
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+  <mat-card class="main-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>assessment</mat-icon>
+        Reports & Analytics
+      </mat-card-title>
+      <mat-card-subtitle>Generate, schedule, and manage system reports</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-tab-group>
+        <!-- Generate Reports Tab -->
+        <mat-tab label="Generate Reports">
+          <div class="tab-content">
+            <!-- Quick Report Buttons -->
+            <div class="quick-reports">
+              <h3>Quick Reports</h3>
+              <div class="quick-buttons">
+                <button mat-raised-button color="primary" (click)="generateStudentReport()">
+                  <mat-icon>school</mat-icon>
+                  Student Report
+                </button>
+                <button mat-raised-button color="accent" (click)="generateCourseReport()">
+                  <mat-icon>book</mat-icon>
+                  Course Report
+                </button>
+                <button mat-raised-button color="warn" (click)="generateFinancialReport()">
+                  <mat-icon>account_balance_wallet</mat-icon>
+                  Financial Report
+                </button>
+                <button mat-raised-button color="primary" (click)="generateAnalyticsReport()">
+                  <mat-icon>analytics</mat-icon>
+                  Analytics Report
+                </button>
+              </div>
+            </div>
+
+            <!-- Report Filter Form -->
+            <mat-expansion-panel class="filter-panel">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>filter_list</mat-icon>
+                  Advanced Report Filters
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <form [formGroup]="reportFilterForm" class="filter-form">
+                <div class="form-row">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Report Type</mat-label>
+                    <mat-select formControlName="reportType">
+                      <mat-option *ngFor="let type of reportTypes" [value]="type.value">
+                        {{ type.label }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Export Format</mat-label>
+                    <mat-select formControlName="format">
+                      <mat-option *ngFor="let format of exportFormats" [value]="format.value">
+                        <mat-icon>{{ format.icon }}</mat-icon>
+                        {{ format.label }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Start Date</mat-label>
+                    <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+                    <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #startPicker></mat-datepicker>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>End Date</mat-label>
+                    <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+                    <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+                    <mat-datepicker #endPicker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Centre</mat-label>
+                    <mat-select formControlName="centreId">
+                      <mat-option value="">All Centres</mat-option>
+                      <mat-option *ngFor="let centre of centres" [value]="centre.id">
+                        {{ centre.name }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Course</mat-label>
+                    <mat-select formControlName="courseId">
+                      <mat-option value="">All Courses</mat-option>
+                      <mat-option *ngFor="let course of courses" [value]="course.id">
+                        {{ course.title }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Instructor</mat-label>
+                    <mat-select formControlName="instructorId">
+                      <mat-option value="">All Instructors</mat-option>
+                      <mat-option *ngFor="let user of users" [value]="user.id">
+                        {{ user.firstName }} {{ user.lastName }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Student</mat-label>
+                    <mat-select formControlName="studentId">
+                      <mat-option value="">All Students</mat-option>
+                      <mat-option *ngFor="let user of users" [value]="user.id">
+                        {{ user.firstName }} {{ user.lastName }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row options">
+                  <mat-checkbox formControlName="includeCharts">Include Charts</mat-checkbox>
+                  <mat-checkbox formControlName="includeTables">Include Tables</mat-checkbox>
+                  <mat-checkbox formControlName="includeSummary">Include Summary</mat-checkbox>
+                </div>
+
+                <div class="form-actions">
+                  <button mat-raised-button color="primary" 
+                          [disabled]="isGeneratingReport || reportFilterForm.invalid"
+                          (click)="generateReport()">
+                    <mat-icon *ngIf="isGeneratingReport">hourglass_empty</mat-icon>
+                    <mat-icon *ngIf="!isGeneratingReport">download</mat-icon>
+                    {{ isGeneratingReport ? 'Generating...' : 'Generate Report' }}
+                  </button>
+                  <button mat-stroked-button (click)="reportFilterForm.reset()">
+                    <mat-icon>refresh</mat-icon>
+                    Reset
+                  </button>
+                </div>
+              </form>
+            </mat-expansion-panel>
+          </div>
+        </mat-tab>
+
+        <!-- Scheduled Reports Tab -->
+        <mat-tab label="Scheduled Reports">
+          <div class="tab-content">
+            <div class="section-header">
+              <h3>Scheduled Reports</h3>
+              <button mat-raised-button color="primary" (click)="createScheduledReport()">
+                <mat-icon>schedule</mat-icon>
+                Create Schedule
+              </button>
+            </div>
+
+            <!-- Scheduled Report Form -->
+            <mat-expansion-panel class="schedule-panel">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>add</mat-icon>
+                  New Scheduled Report
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <form [formGroup]="scheduledReportForm" class="schedule-form">
+                <div class="form-row">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Report Name</mat-label>
+                    <input matInput formControlName="name" placeholder="Enter report name">
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput formControlName="description" placeholder="Enter description"></textarea>
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Report Type</mat-label>
+                    <mat-select formControlName="reportType">
+                      <mat-option *ngFor="let type of reportTypes" [value]="type.value">
+                        {{ type.label }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Frequency</mat-label>
+                    <mat-select formControlName="frequency">
+                      <mat-option *ngFor="let freq of scheduleFrequencies" [value]="freq.value">
+                        {{ freq.label }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div class="form-row">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Time</mat-label>
+                    <input matInput type="time" formControlName="time">
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Day of Week</mat-label>
+                    <mat-select formControlName="dayOfWeek">
+                      <mat-option value="1">Monday</mat-option>
+                      <mat-option value="2">Tuesday</mat-option>
+                      <mat-option value="3">Wednesday</mat-option>
+                      <mat-option value="4">Thursday</mat-option>
+                      <mat-option value="5">Friday</mat-option>
+                      <mat-option value="6">Saturday</mat-option>
+                      <mat-option value="0">Sunday</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div class="form-actions">
+                  <button mat-raised-button color="primary" 
+                          [disabled]="isSavingSchedule || scheduledReportForm.invalid"
+                          (click)="createScheduledReport()">
+                    <mat-icon *ngIf="isSavingSchedule">hourglass_empty</mat-icon>
+                    <mat-icon *ngIf="!isSavingSchedule">save</mat-icon>
+                    {{ isSavingSchedule ? 'Saving...' : 'Save Schedule' }}
+                  </button>
+                  <button mat-stroked-button (click)="scheduledReportForm.reset()">
+                    <mat-icon>refresh</mat-icon>
+                    Reset
+                  </button>
+                </div>
+              </form>
+            </mat-expansion-panel>
+
+            <!-- Scheduled Reports Table -->
+            <div class="table-container">
+              <table mat-table [dataSource]="scheduledReports" class="scheduled-table">
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef>Name</th>
+                  <td mat-cell *matCellDef="let report">{{ report.name }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="type">
+                  <th mat-header-cell *matHeaderCellDef>Type</th>
+                  <td mat-cell *matCellDef="let report">{{ getReportTypeLabel(report.reportType) }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="frequency">
+                  <th mat-header-cell *matHeaderCellDef>Frequency</th>
+                  <td mat-cell *matCellDef="let report">{{ report.frequency }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="nextRun">
+                  <th mat-header-cell *matHeaderCellDef>Next Run</th>
+                  <td mat-cell *matCellDef="let report">{{ report.nextRun | date:'medium' }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                  <th mat-header-cell *matHeaderCellDef>Status</th>
+                  <td mat-cell *matCellDef="let report">
+                    <mat-chip [color]="getStatusColor(report.status)" selected>
+                      {{ report.status }}
+                    </mat-chip>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef>Actions</th>
+                  <td mat-cell *matCellDef="let report">
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="editReportConfig(report)">
+                        <mat-icon>edit</mat-icon>
+                        Edit
+                      </button>
+                      <button mat-menu-item (click)="deleteScheduledReport(report.id)">
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                      </button>
+                    </mat-menu>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="['name', 'type', 'frequency', 'nextRun', 'status', 'actions']"></tr>
+                <tr mat-row *matRowDef="let row; columns: ['name', 'type', 'frequency', 'nextRun', 'status', 'actions'];"></tr>
+              </table>
+            </div>
+          </div>
+        </mat-tab>
+
+        <!-- Report Configurations Tab -->
+        <mat-tab label="Report Configurations">
+          <div class="tab-content">
+            <div class="section-header">
+              <h3>Report Configurations</h3>
+              <button mat-raised-button color="primary" (click)="createReportConfig()">
+                <mat-icon>add</mat-icon>
+                New Configuration
+              </button>
+            </div>
+
+            <!-- Report Configurations Table -->
+            <div class="table-container">
+              <table mat-table [dataSource]="dataSource" matSort class="config-table">
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+                  <td mat-cell *matCellDef="let config">{{ config.name }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="type">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+                  <td mat-cell *matCellDef="let config">{{ getReportTypeLabel(config.type) }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="lastGenerated">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Generated</th>
+                  <td mat-cell *matCellDef="let config">{{ config.lastGenerated | date:'medium' }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+                  <td mat-cell *matCellDef="let config">
+                    <mat-chip [color]="getStatusColor(config.isActive ? 'active' : 'inactive')" selected>
+                      {{ config.isActive ? 'Active' : 'Inactive' }}
+                    </mat-chip>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef>Actions</th>
+                  <td mat-cell *matCellDef="let config">
+                    <button mat-icon-button [matMenuTriggerFor]="configMenu">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #configMenu="matMenu">
+                      <button mat-menu-item (click)="editReportConfig(config)">
+                        <mat-icon>edit</mat-icon>
+                        Edit
+                      </button>
+                      <button mat-menu-item (click)="deleteReportConfig(config.id)">
+                        <mat-icon>delete</mat-icon>
+                        Delete
+                      </button>
+                    </mat-menu>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+
+              <mat-paginator [length]="totalItems"
+                           [pageSize]="pageSize"
+                           [pageSizeOptions]="pageSizeOptions"
+                           [pageIndex]="currentPage"
+                           (page)="onPageChange($event)">
+              </mat-paginator>
+            </div>
+          </div>
+        </mat-tab>
+
+        <!-- Report History Tab -->
+        <mat-tab label="Report History">
+          <div class="tab-content">
+            <div class="section-header">
+              <h3>Report History</h3>
+            </div>
+
+            <!-- Report History Table -->
+            <div class="table-container">
+              <table mat-table [dataSource]="reportHistory" class="history-table">
+                <ng-container matColumnDef="reportName">
+                  <th mat-header-cell *matHeaderCellDef>Report Name</th>
+                  <td mat-cell *matCellDef="let history">{{ history.reportName }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="generatedBy">
+                  <th mat-header-cell *matHeaderCellDef>Generated By</th>
+                  <td mat-cell *matCellDef="let history">{{ history.generatedBy }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="generatedAt">
+                  <th mat-header-cell *matHeaderCellDef>Generated At</th>
+                  <td mat-cell *matCellDef="let history">{{ history.generatedAt | date:'medium' }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="format">
+                  <th mat-header-cell *matHeaderCellDef>Format</th>
+                  <td mat-cell *matCellDef="let history">
+                    <mat-icon>{{ getFormatIcon(history.format) }}</mat-icon>
+                    {{ history.format.toUpperCase() }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="size">
+                  <th mat-header-cell *matHeaderCellDef>Size</th>
+                  <td mat-cell *matCellDef="let history">{{ history.size }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef>Actions</th>
+                  <td mat-cell *matCellDef="let history">
+                    <button mat-icon-button (click)="downloadReport(history.blob, history.filename)">
+                      <mat-icon>download</mat-icon>
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="['reportName', 'generatedBy', 'generatedAt', 'format', 'size', 'actions']"></tr>
+                <tr mat-row *matRowDef="let row; columns: ['reportName', 'generatedBy', 'generatedAt', 'format', 'size', 'actions'];"></tr>
+              </table>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>

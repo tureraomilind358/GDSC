@@ -1,0 +1,37 @@
+.confirm-dialog {
+  .dialog-header {
+    h2 {
+      margin: 0;
+      color: #2c3e50;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+  }
+
+  .dialog-content {
+    margin: 20px 0;
+    
+    p {
+      margin: 0;
+      color: #555;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+  }
+
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+
+    .cancel-btn {
+      color: #666;
+      border: 1px solid #ddd;
+    }
+
+    .confirm-btn {
+      min-width: 100px;
+    }
+  }
+}
