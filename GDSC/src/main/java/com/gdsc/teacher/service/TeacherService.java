@@ -6,6 +6,8 @@ import com.gdsc.teacher.entity.Teacher;
 import com.gdsc.teacher.repository.TeacherRepository;
 import com.gdsc.center.entity.Center;
 import com.gdsc.center.repository.CenterRepository;
+import com.gdsc.auth.entity.User;
+import com.gdsc.auth.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,7 @@ public class TeacherService {
 
     private final TeacherRepository teacherRepository;
     private final CenterRepository centerRepository;
+    private final UserRepository userRepository;
 
     public List<TeacherDto> getAllTeachers() {
         return teacherRepository.findAll().stream()
@@ -62,6 +65,13 @@ public class TeacherService {
         existingTeacher.setYearsOfExperience(teacherDto.getExperience());
         existingTeacher.setHourlyRate(teacherDto.getSalary());
         existingTeacher.setJoiningDate(teacherDto.getHireDate());
+        
+        // Handle User relationship
+        if (teacherDto.getUserId() != null) {
+            User user = userRepository.findById(teacherDto.getUserId())
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + teacherDto.getUserId()));
+            existingTeacher.setUser(user);
+        }
         
         if (teacherDto.getCenterId() != null) {
             Center center = centerRepository.findById(teacherDto.getCenterId())
@@ -129,6 +139,7 @@ public class TeacherService {
         dto.setSalary(teacher.getHourlyRate());
         dto.setHireDate(teacher.getJoiningDate());
         dto.setCenterId(teacher.getCenter() != null ? teacher.getCenter().getId() : null);
+        dto.setUserId(teacher.getUser() != null ? teacher.getUser().getId() : null);
         return dto;
     }
 
@@ -151,6 +162,13 @@ public class TeacherService {
         teacher.setYearsOfExperience(dto.getExperience());
         teacher.setHourlyRate(dto.getSalary());
         teacher.setJoiningDate(dto.getHireDate());
+        
+        // Handle User relationship
+        if (dto.getUserId() != null) {
+            User user = userRepository.findById(dto.getUserId())
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + dto.getUserId()));
+            teacher.setUser(user);
+        }
         
         if (dto.getCenterId() != null) {
             Center center = centerRepository.findById(dto.getCenterId())

@@ -3,6 +3,10 @@ package com.gdsc.fee.service;
 import com.gdsc.fee.dto.PaymentDto;
 import com.gdsc.fee.entity.Payment;
 import com.gdsc.fee.repository.PaymentRepository;
+import com.gdsc.fee.entity.Fee;
+import com.gdsc.fee.repository.FeeRepository;
+import com.gdsc.center.entity.Center;
+import com.gdsc.center.repository.CenterRepository;
 import com.gdsc.common.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +20,12 @@ public class PaymentService {
 
     @Autowired
     private PaymentRepository paymentRepository;
+    
+    @Autowired
+    private FeeRepository feeRepository;
+    
+    @Autowired
+    private CenterRepository centerRepository;
 
     public List<PaymentDto> getAllPayments() {
         return paymentRepository.findAll().stream()
@@ -46,6 +56,20 @@ public class PaymentService {
         existingPayment.setTransactionId(paymentDto.getTransactionId());
         existingPayment.setStatus(Payment.PaymentStatus.valueOf(paymentDto.getStatus()));
         existingPayment.setNotes(paymentDto.getNotes());
+        
+        // Handle Fee relationship
+        if (paymentDto.getFeeId() != null) {
+            Fee fee = feeRepository.findById(paymentDto.getFeeId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Fee", "id", paymentDto.getFeeId()));
+            existingPayment.setFee(fee);
+        }
+        
+        // Handle Center relationship
+        if (paymentDto.getCenterId() != null) {
+            Center center = centerRepository.findById(paymentDto.getCenterId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Center", "id", paymentDto.getCenterId()));
+            existingPayment.setCenter(center);
+        }
         
         Payment updatedPayment = paymentRepository.save(existingPayment);
         return convertToDto(updatedPayment);
@@ -109,8 +133,21 @@ public class PaymentService {
 
     private Payment convertToEntity(PaymentDto dto) {
         Payment payment = new Payment();
-        // Note: This is a simplified conversion. In a real application,
-        // you would need to fetch the related entities (Fee, Center)
+        
+        // Handle Fee relationship
+        if (dto.getFeeId() != null) {
+            Fee fee = feeRepository.findById(dto.getFeeId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Fee", "id", dto.getFeeId()));
+            payment.setFee(fee);
+        }
+        
+        // Handle Center relationship
+        if (dto.getCenterId() != null) {
+            Center center = centerRepository.findById(dto.getCenterId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Center", "id", dto.getCenterId()));
+            payment.setCenter(center);
+        }
+        
         payment.setAmount(dto.getAmount());
         payment.setPaymentMethod(Payment.PaymentMethod.valueOf(dto.getMethod()));
         payment.setTransactionId(dto.getTransactionId());

@@ -3,6 +3,12 @@ package com.gdsc.fee.service;
 import com.gdsc.fee.dto.FeeDto;
 import com.gdsc.fee.entity.Fee;
 import com.gdsc.fee.repository.FeeRepository;
+import com.gdsc.course.entity.Course;
+import com.gdsc.course.repository.CourseRepository;
+import com.gdsc.student.entity.Student;
+import com.gdsc.student.repository.StudentRepository;
+import com.gdsc.center.entity.Center;
+import com.gdsc.center.repository.CenterRepository;
 import com.gdsc.common.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +21,15 @@ public class FeeService {
 
     @Autowired
     private FeeRepository feeRepository;
+    
+    @Autowired
+    private CourseRepository courseRepository;
+    
+    @Autowired
+    private StudentRepository studentRepository;
+    
+    @Autowired
+    private CenterRepository centerRepository;
 
     public List<FeeDto> getAllFees() {
         return feeRepository.findAll().stream()
@@ -43,6 +58,27 @@ public class FeeService {
         existingFee.setDueDate(feeDto.getDueDate());
         existingFee.setPaidAmount(feeDto.getPaidAmount());
         existingFee.setPendingAmount(feeDto.getPendingAmount());
+        
+        // Handle Course relationship
+        if (feeDto.getCourseId() != null) {
+            Course course = courseRepository.findById(feeDto.getCourseId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Course", "id", feeDto.getCourseId()));
+            existingFee.setCourse(course);
+        }
+        
+        // Handle Student relationship
+        if (feeDto.getStudentId() != null) {
+            Student student = studentRepository.findById(feeDto.getStudentId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Student", "id", feeDto.getStudentId()));
+            existingFee.setStudent(student);
+        }
+        
+        // Handle Center relationship
+        if (feeDto.getCenterId() != null) {
+            Center center = centerRepository.findById(feeDto.getCenterId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Center", "id", feeDto.getCenterId()));
+            existingFee.setCenter(center);
+        }
         
         Fee updatedFee = feeRepository.save(existingFee);
         return convertToDto(updatedFee);
@@ -92,6 +128,28 @@ public class FeeService {
         fee.setDueDate(dto.getDueDate());
         fee.setPaidAmount(dto.getPaidAmount());
         fee.setPendingAmount(dto.getPendingAmount());
+        
+        // Handle Course relationship
+        if (dto.getCourseId() != null) {
+            Course course = courseRepository.findById(dto.getCourseId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Course", "id", dto.getCourseId()));
+            fee.setCourse(course);
+        }
+        
+        // Handle Student relationship
+        if (dto.getStudentId() != null) {
+            Student student = studentRepository.findById(dto.getStudentId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Student", "id", dto.getStudentId()));
+            fee.setStudent(student);
+        }
+        
+        // Handle Center relationship
+        if (dto.getCenterId() != null) {
+            Center center = centerRepository.findById(dto.getCenterId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Center", "id", dto.getCenterId()));
+            fee.setCenter(center);
+        }
+        
         return fee;
     }
 } 

@@ -64,4 +64,7 @@ public class StudentDto {
     
     @Schema(description = "Center ID", example = "1")
     private Long centerId;
+    
+    @Schema(description = "User ID for authentication", example = "1")
+    private Long userId;
 }

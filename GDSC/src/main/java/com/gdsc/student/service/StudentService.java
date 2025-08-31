@@ -6,6 +6,8 @@ import com.gdsc.student.entity.Student;
 import com.gdsc.student.repository.StudentRepository;
 import com.gdsc.center.entity.Center;
 import com.gdsc.center.repository.CenterRepository;
+import com.gdsc.auth.entity.User;
+import com.gdsc.auth.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,7 @@ public class StudentService {
 
     private final StudentRepository studentRepository;
     private final CenterRepository centerRepository;
+    private final UserRepository userRepository;
 
     public List<StudentDto> getAllStudents() {
         return studentRepository.findAll().stream()
@@ -58,6 +61,13 @@ public class StudentService {
         existingStudent.setEnrollmentDate(studentDto.getEnrollmentDate());
         // These fields don't exist in DTO: country, emergencyContact, parentName, parentPhone, graduationDate
         existingStudent.setStatus(Student.StudentStatus.valueOf(studentDto.getStatus()));
+        
+        // Handle User relationship
+        if (studentDto.getUserId() != null) {
+            User user = userRepository.findById(studentDto.getUserId())
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + studentDto.getUserId()));
+            existingStudent.setUser(user);
+        }
         
         if (studentDto.getCenterId() != null) {
             Center center = centerRepository.findById(studentDto.getCenterId())
@@ -111,6 +121,7 @@ public class StudentService {
         // These fields don't exist in DTO: country, emergencyContact, parentName, parentPhone, graduationDate
         dto.setStatus(student.getStatus().name());
         dto.setCenterId(student.getCenter() != null ? student.getCenter().getId() : null);
+        dto.setUserId(student.getUser() != null ? student.getUser().getId() : null);
         return dto;
     }
 
@@ -129,6 +140,13 @@ public class StudentService {
         student.setEnrollmentDate(dto.getEnrollmentDate());
         // These fields don't exist in DTO: country, emergencyContact, parentName, parentPhone, graduationDate
         student.setStatus(Student.StudentStatus.valueOf(dto.getStatus()));
+        
+        // Handle User relationship
+        if (dto.getUserId() != null) {
+            User user = userRepository.findById(dto.getUserId())
+                    .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + dto.getUserId()));
+            student.setUser(user);
+        }
         
         if (dto.getCenterId() != null) {
             Center center = centerRepository.findById(dto.getCenterId())

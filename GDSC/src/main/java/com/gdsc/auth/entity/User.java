@@ -65,6 +65,12 @@ public class User extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "center_id")
     private Center center;
+    
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<com.gdsc.teacher.entity.Teacher> teachers = new HashSet<>();
+    
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<com.gdsc.student.entity.Student> students = new HashSet<>();
 
     public void addRole(Role role) {
         this.roles.add(role);
@@ -72,5 +78,25 @@ public class User extends BaseEntity {
 
     public void removeRole(Role role) {
         this.roles.remove(role);
+    }
+    
+    public void addTeacher(com.gdsc.teacher.entity.Teacher teacher) {
+        this.teachers.add(teacher);
+        teacher.setUser(this);
+    }
+    
+    public void removeTeacher(com.gdsc.teacher.entity.Teacher teacher) {
+        this.teachers.remove(teacher);
+        teacher.setUser(null);
+    }
+    
+    public void addStudent(com.gdsc.student.entity.Student student) {
+        this.students.add(student);
+        student.setUser(this);
+    }
+    
+    public void removeStudent(com.gdsc.student.entity.Student student) {
+        this.students.remove(student);
+        student.setUser(null);
     }
 }

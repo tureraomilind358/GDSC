@@ -5,6 +5,7 @@ import com.gdsc.course.dto.CourseDto;
 import com.gdsc.course.entity.Course;
 import com.gdsc.course.entity.CourseCategory;
 import com.gdsc.course.repository.CourseRepository;
+import com.gdsc.course.repository.CourseCategoryRepository;
 import com.gdsc.center.entity.Center;
 import com.gdsc.center.repository.CenterRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 public class CourseService {
 
     private final CourseRepository courseRepository;
+    private final CourseCategoryRepository courseCategoryRepository;
     private final CenterRepository centerRepository;
 
     public List<CourseDto> getAllCourses() {
@@ -55,6 +57,13 @@ public class CourseService {
         existingCourse.setDiscountPercentage(courseDto.getDiscount().intValue());
         existingCourse.setMaxStudents(courseDto.getMaxStudents());
         existingCourse.setIsPublished(courseDto.getIsPublished());
+        
+        // Handle CourseCategory relationship
+        if (courseDto.getCategoryId() != null) {
+            CourseCategory category = courseCategoryRepository.findById(courseDto.getCategoryId())
+                    .orElseThrow(() -> new ResourceNotFoundException("CourseCategory not found with id: " + courseDto.getCategoryId()));
+            existingCourse.setCategory(category);
+        }
         
         if (courseDto.getCenterId() != null) {
             Center center = centerRepository.findById(courseDto.getCenterId())
@@ -126,6 +135,13 @@ public class CourseService {
         course.setDiscountPercentage(dto.getDiscount() != null ? dto.getDiscount().intValue() : null);
         course.setMaxStudents(dto.getMaxStudents());
         course.setIsPublished(dto.getIsPublished());
+        
+        // Handle CourseCategory relationship
+        if (dto.getCategoryId() != null) {
+            CourseCategory category = courseCategoryRepository.findById(dto.getCategoryId())
+                    .orElseThrow(() -> new ResourceNotFoundException("CourseCategory not found with id: " + dto.getCategoryId()));
+            course.setCategory(category);
+        }
         
         if (dto.getCenterId() != null) {
             Center center = centerRepository.findById(dto.getCenterId())
