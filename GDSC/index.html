@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDSC Institute Management System - System Design Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .card p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .card ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .card li {
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .status-fixed {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status-working {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .diagram-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .diagram-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        .diagram-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .diagram {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tech-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #667eea;
+        }
+        
+        .tech-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ GDSC Institute Management System</h1>
+            <p>Comprehensive System Design Documentation & Architecture Overview</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="card">
+                <h2>🚀 System Overview</h2>
+                <div class="status-badge status-fixed">✅ System Fixed & Operational</div>
+                <p>The GDSC Institute Management System is a comprehensive educational management platform designed to handle all aspects of institute operations including student management, teacher management, course administration, fee management, and examination systems.</p>
+                <ul>
+                    <li><strong>Multi-tenant Architecture:</strong> Supports multiple centers/institutes</li>
+                    <li><strong>Role-based Access Control:</strong> Secure authentication and authorization</li>
+                    <li><strong>Scalable Design:</strong> Built with modern Spring Boot architecture</li>
+                    <li><strong>RESTful APIs:</strong> Comprehensive API endpoints for all modules</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🔧 Recent Fixes Applied</h2>
+                <div class="status-badge status-fixed">✅ All Issues Resolved</div>
+                <p><strong>Critical Issue Fixed:</strong> @OneToOne relationships not working in POST/CREATE APIs</p>
+                <ul>
+                    <li><strong>Teacher & Student Services:</strong> Added User relationship handling</li>
+                    <li><strong>Fee & Payment Services:</strong> Fixed entity relationship mapping</li>
+                    <li><strong>Course Service:</strong> Added Category relationship handling</li>
+                    <li><strong>DTO Updates:</strong> Added missing userId fields</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🏗️ Architecture Pattern</h2>
+                <p><strong>Layered Architecture:</strong> Following Spring Boot best practices</p>
+                <ul>
+                    <li><strong>Controller Layer:</strong> REST API endpoints with security</li>
+                    <li><strong>Service Layer:</strong> Business logic and transaction management</li>
+                    <li><strong>Repository Layer:</strong> Data access with JPA/Hibernate</li>
+                    <li><strong>Entity Layer:</strong> JPA entities with proper relationships</li>
+                    <li><strong>DTO Layer:</strong> Data transfer objects for API communication</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🔐 Security Features</h2>
+                <p><strong>Comprehensive Security Implementation:</strong></p>
+                <ul>
+                    <li><strong>JWT Authentication:</strong> Secure token-based authentication</li>
+                    <li><strong>Role-based Authorization:</strong> ADMIN, STAFF, TEACHER, STUDENT roles</li>
+                    <li><strong>Method-level Security:</strong> @PreAuthorize annotations</li>
+                    <li><strong>Password Encryption:</strong> BCrypt password hashing</li>
+                    <li><strong>Session Management:</strong> Secure session handling</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>📊 Database Design</h2>
+                <p><strong>Relational Database with JPA:</strong></p>
+                <ul>
+                    <li><strong>Entity Relationships:</strong> Proper @OneToOne, @OneToMany, @ManyToOne mappings</li>
+                    <li><strong>Lazy Loading:</strong> Optimized data fetching</li>
+                    <li><strong>Cascade Operations:</strong> Proper entity lifecycle management</li>
+                    <li><strong>Validation:</strong> Bean validation constraints</li>
+                    <li><strong>Audit Trail:</strong> Base entity with timestamps</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>🌐 API Design</h2>
+                <p><strong>RESTful API Standards:</strong></p>
+                <ul>
+                    <li><strong>HTTP Methods:</strong> GET, POST, PUT, DELETE operations</li>
+                    <li><strong>Response Format:</strong> Consistent ApiResponse wrapper</li>
+                    <li><strong>Error Handling:</strong> Global exception handling</li>
+                    <li><strong>Validation:</strong> Request validation with detailed error messages</li>
+                    <li><strong>Documentation:</strong> Swagger/OpenAPI integration</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="diagram-section">
+            <h2>🏛️ System Architecture Diagram</h2>
+            <div class="diagram-container">
+                <svg class="diagram" width="800" height="600" viewBox="0 0 800 600">
+                    <!-- Background -->
+                    <rect width="800" height="600" fill="#f8f9fa" rx="10"/>
+                    
+                    <!-- Client Layer -->
+                    <rect x="50" y="50" width="700" height="60" fill="#667eea" rx="10"/>
+                    <text x="400" y="85" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Client Applications (Web, Mobile, Admin Panel)</text>
+                    
+                    <!-- API Gateway -->
+                    <rect x="50" y="130" width="700" height="50" fill="#764ba2" rx="10"/>
+                    <text x="400" y="160" text-anchor="middle" fill="white" font-size="14" font-weight="bold">API Gateway & Security Layer (JWT, CORS, Rate Limiting)</text>
+                    
+                    <!-- Controller Layer -->
+                    <rect x="50" y="200" width="700" height="40" fill="#f093fb" rx="10"/>
+                    <text x="400" y="225" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Controller Layer (REST API Endpoints)</text>
+                    
+                    <!-- Service Layer -->
+                    <rect x="50" y="260" width="700" height="40" fill="#4facfe" rx="10"/>
+                    <text x="400" y="285" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Service Layer (Business Logic & Transaction Management)</text>
+                    
+                    <!-- Repository Layer -->
+                    <rect x="50" y="320" width="700" height="40" fill="#43e97b" rx="10"/>
+                    <text x="400" y="345" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Repository Layer (Data Access with JPA/Hibernate)</text>
+                    
+                    <!-- Database -->
+                    <rect x="50" y="380" width="700" height="60" fill="#fa709a" rx="10"/>
+                    <text x="400" y="415" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Database Layer (PostgreSQL/MySQL with Proper Relationships)</text>
+                    
+                    <!-- Module Boxes -->
+                    <rect x="100" y="460" width="120" height="80" fill="#667eea" rx="8"/>
+                    <text x="160" y="485" text-anchor="middle" fill="white" font-size="12" font-weight="bold">User Management</text>
+                    <text x="160" y="500" text-anchor="middle" fill="white" font-size="10">Authentication</text>
+                    <text x="160" y="515" text-anchor="middle" fill="white" font-size="10">Authorization</text>
+                    <text x="160" y="530" text-anchor="middle" fill="white" font-size="10">Roles & Permissions</text>
+                    
+                    <rect x="240" y="460" width="120" height="80" fill="#764ba2" rx="8"/>
+                    <text x="300" y="485" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Student Management</text>
+                    <text x="300" y="500" text-anchor="middle" fill="white" font-size="10">Enrollment</text>
+                    <text x="300" y="515" text-anchor="middle" fill="white" font-size="10">Profiles</text>
+                    <text x="300" y="530" text-anchor="middle" fill="white" font-size="10">Course Registration</text>
+                    
+                    <rect x="380" y="460" width="120" height="80" fill="#f093fb" rx="8"/>
+                    <text x="440" y="485" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Teacher Management</text>
+                    <text x="440" y="500" text-anchor="middle" fill="white" font-size="10">Assignments</text>
+                    <text x="440" y="515" text-anchor="middle" fill="white" font-size="10">Schedules</text>
+                    <text x="440" y="530" text-anchor="middle" fill="white" font-size="10">Performance</text>
+                    
+                    <rect x="520" y="460" width="120" height="80" fill="#4facfe" rx="8"/>
+                    <text x="580" y="485" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Course Management</text>
+                    <text x="580" y="500" text-anchor="middle" fill="white" font-size="10">Curriculum</text>
+                    <text x="580" y="515" text-anchor="middle" fill="white" font-size="10">Scheduling</text>
+                    <text x="580" y="530" text-anchor="middle" fill="white" font-size="10">Content</text>
+                    
+                    <rect x="660" y="460" width="120" height="80" fill="#43e97b" rx="8"/>
+                    <text x="720" y="485" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Financial Management</text>
+                    <text x="720" y="500" text-anchor="middle" fill="white" font-size="10">Fee Collection</text>
+                    <text x="720" y="515" text-anchor="middle" fill="white" font-size="10">Payments</text>
+                    <text x="720" y="530" text-anchor="middle" fill="white" font-size="10">Reports</text>
+                </svg>
+            </div>
+        </div>
+
+        <div class="diagram-section">
+            <h2>🔗 Entity Relationship Diagram</h2>
+            <div class="diagram-container">
+                <svg class="diagram" width="800" height="500" viewBox="0 0 800 500">
+                    <!-- Background -->
+                    <rect width="800" height="500" fill="#f8f9fa" rx="10"/>
+                    
+                    <!-- User Entity -->
+                    <rect x="50" y="50" width="120" height="60" fill="#667eea" rx="8"/>
+                    <text x="110" y="80" text-anchor="middle" fill="white" font-size="12" font-weight="bold">User</text>
+                    <text x="110" y="95" text-anchor="middle" fill="white" font-size="10">(id, username, email)</text>
+                    
+                    <!-- Teacher Entity -->
+                    <rect x="250" y="50" width="120" height="60" fill="#764ba2" rx="8"/>
+                    <text x="310" y="80" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Teacher</text>
+                    <text x="310" y="95" text-anchor="middle" fill="white" font-size="10">(id, firstName, lastName)</text>
+                    
+                    <!-- Student Entity -->
+                    <rect x="450" y="50" width="120" height="60" fill="#f093fb" rx="8"/>
+                    <text x="510" y="80" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Student</text>
+                    <text x="510" y="95" text-anchor="middle" fill="white" font-size="10">(id, firstName, lastName)</text>
+                    
+                    <!-- Course Entity -->
+                    <rect x="650" y="50" width="120" height="60" fill="#4facfe" rx="8"/>
+                    <text x="710" y="80" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Course</text>
+                    <text x="710" y="95" text-anchor="middle" fill="white" font-size="10">(id, name, description)</text>
+                    
+                    <!-- Center Entity -->
+                    <rect x="50" y="200" width="120" height="60" fill="#43e97b" rx="8"/>
+                    <text x="110" y="230" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Center</text>
+                    <text x="110" y="245" text-anchor="middle" fill="white" font-size="10">(id, name, address)</text>
+                    
+                    <!-- Fee Entity -->
+                    <rect x="250" y="200" width="120" height="60" fill="#fa709a" rx="8"/>
+                    <text x="310" y="230" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Fee</text>
+                    <text x="310" y="245" text-anchor="middle" fill="white" font-size="10">(id, amount, dueDate)</text>
+                    
+                    <!-- Payment Entity -->
+                    <rect x="450" y="200" width="120" height="60" fill="#ff9a9e" rx="8"/>
+                    <text x="510" y="230" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Payment</text>
+                    <text x="510" y="245" text-anchor="middle" fill="white" font-size="10">(id, amount, method)</text>
+                    
+                    <!-- Exam Entity -->
+                    <rect x="650" y="200" width="120" height="60" fill="#a8edea" rx="8"/>
+                    <text x="710" y="230" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Exam</text>
+                    <text x="710" y="245" text-anchor="middle" fill="white" font-size="10">(id, title, duration)</text>
+                    
+                    <!-- Relationships -->
+                    <!-- User -> Teacher (OneToOne) -->
+                    <line x1="170" y1="80" x2="250" y2="80" stroke="#333" stroke-width="2"/>
+                    <text x="210" y="70" text-anchor="middle" fill="#333" font-size="10">1:1</text>
+                    
+                    <!-- User -> Student (OneToOne) -->
+                    <line x1="170" y1="80" x2="450" y2="80" stroke="#333" stroke-width="2"/>
+                    <text x="310" y="70" text-anchor="middle" fill="#333" font-size="10">1:1</text>
+                    
+                    <!-- Center -> User (OneToMany) -->
+                    <line x1="110" y1="200" x2="110" y2="110" stroke="#333" stroke-width="2"/>
+                    <text x="130" y="155" text-anchor="middle" fill="#333" font-size="10">1:N</text>
+                    
+                    <!-- Center -> Teacher (OneToMany) -->
+                    <line x1="110" y1="200" x2="250" y2="110" stroke="#333" stroke-width="2"/>
+                    <text x="180" y="155" text-anchor="middle" fill="#333" font-size="10">1:N</text>
+                    
+                    <!-- Center -> Student (OneToMany) -->
+                    <line x1="110" y1="200" x2="450" y2="110" stroke="#333" stroke-width="2"/>
+                    <text x="280" y="155" text-anchor="middle" fill="#333" font-size="10">1:N</text>
+                    
+                    <!-- Course -> Teacher (ManyToMany) -->
+                    <line x1="650" y1="80" x2="250" y2="80" stroke="#333" stroke-width="2"/>
+                    <text x="450" y="70" text-anchor="middle" fill="#333" font-size="10">M:N</text>
+                    
+                    <!-- Course -> Student (ManyToMany) -->
+                    <line x1="650" y1="80" x2="450" y2="80" stroke="#333" stroke-width="2"/>
+                    <text x="550" y="70" text-anchor="middle" fill="#333" font-size="10">M:N</text>
+                    
+                    <!-- Fee -> Student (ManyToOne) -->
+                    <line x1="250" y1="200" x2="450" y2="110" stroke="#333" stroke-width="2"/>
+                    <text x="350" y="155" text-anchor="middle" fill="#333" font-size="10">N:1</text>
+                    
+                    <!-- Fee -> Course (ManyToOne) -->
+                    <line x1="250" y1="200" x2="650" y2="110" stroke="#333" stroke-width="2"/>
+                    <text x="450" y="155" text-anchor="middle" fill="#333" font-size="10">N:1</text>
+                    
+                    <!-- Payment -> Fee (ManyToOne) -->
+                    <line x1="450" y1="200" x2="250" y2="200" stroke="#333" stroke-width="2"/>
+                    <text x="350" y="190" text-anchor="middle" fill="#333" font-size="10">N:1</text>
+                    
+                    <!-- Exam -> Course (ManyToOne) -->
+                    <line x1="650" y1="200" x2="650" y2="110" stroke="#333" stroke-width="2"/>
+                    <text x="670" y="155" text-anchor="middle" fill="#333" font-size="10">N:1</text>
+                    
+                    <!-- Legend -->
+                    <rect x="50" y="300" width="700" height="180" fill="white" rx="8" stroke="#ddd"/>
+                    <text x="400" y="325" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">Relationship Types</text>
+                    
+                    <text x="80" y="350" fill="#333" font-size="12">• <strong>1:1 (OneToOne):</strong> User ↔ Teacher, User ↔ Student</text>
+                    <text x="80" y="370" fill="#333" font-size="12">• <strong>1:N (OneToMany):</strong> Center → Users, Center → Teachers, Center → Students</text>
+                    <text x="80" y="390" fill="#333" font-size="12">• <strong>N:1 (ManyToOne):</strong> Fee → Student, Fee → Course, Payment → Fee, Exam → Course</text>
+                    <text x="80" y="410" fill="#333" font-size="12">• <strong>M:N (ManyToMany):</strong> Course ↔ Teachers, Course ↔ Students</text>
+                    <text x="80" y="430" fill="#333" font-size="12">• <strong>Key Fix Applied:</strong> All @OneToOne relationships now properly handle User entity mapping</text>
+                    <text x="80" y="450" fill="#333" font-size="12">• <strong>Service Layer:</strong> All services now properly fetch and set related entities during creation/updates</text>
+                </svg>
+            </div>
+        </div>
+
+        <div class="diagram-section">
+            <h2>⚡ Technology Stack</h2>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <h4>Backend Framework</h4>
+                    <p>Spring Boot 3.x</p>
+                    <p>Java 17+</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Database & ORM</h4>
+                    <p>PostgreSQL/MySQL</p>
+                    <p>JPA/Hibernate</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Security</h4>
+                    <p>Spring Security</p>
+                    <p>JWT Authentication</p>
+                </div>
+                <div class="tech-item">
+                    <h4>API Documentation</h4>
+                    <p>Swagger/OpenAPI</p>
+                    <p>RESTful APIs</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Build & Deploy</h4>
+                    <p>Maven</p>
+                    <p>Docker</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Testing</h4>
+                    <p>JUnit 5</p>
+                    <p>Mockito</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 GDSC Institute Management System. All rights reserved.</p>
+            <p>System Architecture & Design Documentation | Version 2.0 | All Critical Issues Resolved</p>
+        </div>
+    </div>
+</body>
+</html>
