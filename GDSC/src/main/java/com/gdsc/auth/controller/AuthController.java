@@ -3,6 +3,7 @@ package com.gdsc.auth.controller;
 import com.gdsc.auth.dto.AuthRequest;
 import com.gdsc.auth.dto.AuthResponse;
 import com.gdsc.auth.dto.RegisterRequest;
+import com.gdsc.auth.dto.ChangePasswordRequest;
 import com.gdsc.auth.service.AuthService;
 import com.gdsc.common.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -61,5 +62,19 @@ public class AuthController {
     public ResponseEntity<ApiResponse<String>> logout() {
         // In JWT-based authentication, logout is handled client-side by discarding the token
         return ResponseEntity.ok(ApiResponse.success("Logout successful. Please discard your token."));
+    }
+
+    @PostMapping("/change-password")
+    @Operation(
+        summary = "Change password",
+        description = "Change password by providing username, oldPassword, newPassword."
+    )
+    public ResponseEntity<ApiResponse<String>> changePassword(@Valid @RequestBody ChangePasswordRequest request) {
+        try {
+            authService.changePassword(request);
+            return ResponseEntity.ok(ApiResponse.success("Password changed successfully"));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(ApiResponse.error("Password change failed: " + e.getMessage()));
+        }
     }
 }

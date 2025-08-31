@@ -30,4 +30,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     List<Student> findByCity(String city);
     
     List<Student> findByState(String state);
+
+    List<Student> findByCenterId(Long centerId);
 }

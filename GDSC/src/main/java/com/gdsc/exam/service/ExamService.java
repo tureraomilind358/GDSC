@@ -70,6 +70,12 @@ public class ExamService {
                 .collect(Collectors.toList());
     }
 
+    public List<ExamDto> getExamsByCenter(Long centerId) {
+        return examRepository.findByCenterId(centerId).stream()
+                .map(this::convertToDto)
+                .collect(java.util.stream.Collectors.toList());
+    }
+
     public void evaluateExam(Long examId) {
         Exam exam = examRepository.findById(examId)
                 .orElseThrow(() -> new ResourceNotFoundException("Exam", "id", examId));

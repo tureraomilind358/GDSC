@@ -3,6 +3,8 @@ package com.gdsc.center.controller;
 import com.gdsc.common.ApiResponse;
 import com.gdsc.center.dto.CenterDto;
 import com.gdsc.center.service.CenterService;
+import com.gdsc.center.dto.CenterRegistrationRequest;
+import com.gdsc.center.dto.CenterRegistrationResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -26,6 +28,13 @@ public class CenterController {
     public ResponseEntity<ApiResponse<List<CenterDto>>> getAllCenters() {
         List<CenterDto> centers = centerService.getAllCenters();
         return ResponseEntity.ok(ApiResponse.success("Centers retrieved successfully", centers));
+    }
+
+    @PostMapping("/register")
+    @Operation(summary = "Register center", description = "Public endpoint to register a new center and receive credentials")
+    public ResponseEntity<ApiResponse<CenterRegistrationResponse>> registerCenter(@Valid @RequestBody CenterRegistrationRequest request) {
+        CenterRegistrationResponse response = centerService.registerCenter(request);
+        return ResponseEntity.ok(ApiResponse.success("Center registered successfully. Check your email for centerCode, centerUserName, tempPassword.", response));
     }
 
     @GetMapping("/{id}")

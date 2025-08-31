@@ -7,7 +7,6 @@ import com.gdsc.common.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -119,6 +118,12 @@ public class CertificationService {
         Certification certification = certificationRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Certification", "id", id));
         return certification.getStatus().name();
+    }
+
+    public List<CertificationDto> getCertificationsByCenter(Long centerId) {
+        return certificationRepository.findByCenterId(centerId).stream()
+                .map(this::convertToDto)
+                .collect(java.util.stream.Collectors.toList());
     }
 
     public void revokeCertificate(Long id) {

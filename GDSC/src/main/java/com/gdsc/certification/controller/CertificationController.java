@@ -116,4 +116,12 @@ public class CertificationController {
         certificationService.revokeCertificate(id);
         return ResponseEntity.ok(ApiResponse.success("Certificate revoked successfully"));
     }
+
+    @GetMapping("/center/{centerId}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF')")
+    @Operation(summary = "Get center certifications", description = "Get all certifications for a specific center (Admin/Staff only)")
+    public ResponseEntity<ApiResponse<List<CertificationDto>>> getCenterCertifications(@PathVariable Long centerId) {
+        List<CertificationDto> certifications = certificationService.getCertificationsByCenter(centerId);
+        return ResponseEntity.ok(ApiResponse.success("Center certifications retrieved successfully", certifications));
+    }
 }

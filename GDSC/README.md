@@ -14,7 +14,7 @@ A comprehensive, production-ready Angular application for managing educational i
 - **Fee Management**: Integrated payment system with multiple payment methods
 
 ### Technical Features
-- **Angular 19**: Latest version with standalone components
+- **Angular 14**: Latest version with standalone components
 - **Material Design**: Modern UI components using Angular Material
 - **Responsive Design**: Mobile-first approach with Bootstrap integration
 - **Lazy Loading**: Feature modules loaded on demand
@@ -88,7 +88,7 @@ src/app/
 ## 🛠️ Technology Stack
 
 ### Frontend Framework
-- **Angular 19**: Latest version with modern features
+- **Angular 14**: Latest version with modern features
 - **TypeScript**: Strong typing and modern JavaScript features
 - **RxJS**: Reactive programming and state management
 
@@ -357,4 +357,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ using Angular 19 and modern web technologies**
+**Built with ❤️ using Angular 14 and modern web technologies**

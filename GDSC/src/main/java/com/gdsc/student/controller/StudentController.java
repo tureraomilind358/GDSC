@@ -70,4 +70,12 @@ public class StudentController {
         List<StudentDto> students = studentService.searchStudents(keyword);
         return ResponseEntity.ok(ApiResponse.success("Students found successfully", students));
     }
+
+    @GetMapping("/center/{centerId}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF')")
+    @Operation(summary = "Get center students", description = "Get all students for a specific center (Admin/Staff only)")
+    public ResponseEntity<ApiResponse<List<StudentDto>>> getStudentsByCenter(@PathVariable Long centerId) {
+        List<StudentDto> students = studentService.getStudentsByCenter(centerId);
+        return ResponseEntity.ok(ApiResponse.success("Center students retrieved successfully", students));
+    }
 }

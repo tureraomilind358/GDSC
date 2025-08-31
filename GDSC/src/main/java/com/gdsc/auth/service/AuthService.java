@@ -8,6 +8,7 @@ import com.gdsc.auth.entity.User;
 import com.gdsc.auth.repository.RoleRepository;
 import com.gdsc.auth.repository.UserRepository;
 import com.gdsc.auth.util.JwtUtil;
+import com.gdsc.auth.dto.ChangePasswordRequest;
 import com.gdsc.auth.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -108,5 +109,16 @@ public class AuthService {
                     .build();
         }
         throw new RuntimeException("Invalid token");
+    }
+
+    public void changePassword(ChangePasswordRequest request) {
+        User user = userRepository.findByUsername(request.getUsername()).orElseThrow(() -> new RuntimeException("User not found"));
+
+        // verify old password
+        if (!passwordEncoder.matches(request.getOldPassword(), user.getPassword())) {
+            throw new RuntimeException("Old password is incorrect");
+        }
+        user.setPassword(passwordEncoder.encode(request.getNewPassword()));
+        userRepository.save(user);
     }
 }

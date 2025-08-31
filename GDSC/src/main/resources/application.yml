@@ -30,14 +30,18 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${MAIL_USERNAME:test@gmail.com}
-    password: ${MAIL_PASSWORD:test123}
+    username: tureraomilind358@gmail.com
+    password: xzbj msby bwcj xpis
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
+
+app:
+  mail:
+    devMode: false
 
 # JWT Configuration
 jwt:

@@ -22,6 +22,7 @@ public class Role extends BaseEntity {
         ADMIN,
         TEACHER,
         STUDENT,
-        STAFF
+        STAFF,
+        CENTER
     }
 }

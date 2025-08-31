@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -84,8 +83,9 @@ public class StudentService {
     }
 
     public List<StudentDto> getStudentsByCenter(Long centerId) {
-        // TODO: Implement this method when the repository supports it
-        return new java.util.ArrayList<>();
+        return studentRepository.findByCenterId(centerId).stream()
+                .map(this::convertToDto)
+                .collect(java.util.stream.Collectors.toList());
     }
 
     public List<StudentDto> getStudentsByStatus(String status) {

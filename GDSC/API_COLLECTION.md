@@ -180,6 +180,10 @@ Authorization: Bearer <your_jwt_token>
 - **GET** `/students/search?keyword=john`
 - **Access**: ADMIN, STAFF
 
+### Get Center Students
+- **GET** `/students/center/{centerId}`
+- **Access**: ADMIN, STAFF
+
 ---
 
 ## 4. Teacher Module (`/teachers`)
@@ -466,6 +470,10 @@ Authorization: Bearer <your_jwt_token>
 - **GET** `/exams/student/{studentId}`
 - **Access**: Public
 
+#### Get Center Exams
+- **GET** `/exams/center/{centerId}`
+- **Access**: Public
+
 ### 8.2 Question Management
 
 #### Get Exam Questions
@@ -587,6 +595,10 @@ Authorization: Bearer <your_jwt_token>
 ### Revoke Certificate
 - **PUT** `/certifications/{id}/revoke`
 - **Access**: ADMIN
+
+### Get Center Certifications
+- **GET** `/certifications/center/{centerId}`
+- **Access**: ADMIN, STAFF
 
 ---
 

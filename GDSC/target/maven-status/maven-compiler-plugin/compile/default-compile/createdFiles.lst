@@ -12,6 +12,7 @@ com\gdsc\certification\entity\Certification$CertificationStatus.class
 com\gdsc\config\SwaggerConfig.class
 com\gdsc\exam\entity\Question.class
 com\gdsc\auth\service\CustomUserDetailsService.class
+com\gdsc\auth\controller\UserController.class
 com\gdsc\auth\service\StudentSecurityService.class
 com\gdsc\course\controller\CourseController.class
 com\gdsc\common\exception\ResourceNotFoundException.class
@@ -29,14 +30,17 @@ com\gdsc\config\DataInitializer.class
 com\gdsc\exam\entity\Exam$ExamStatus.class
 com\gdsc\center\repository\CenterRepository.class
 com\gdsc\fee\repository\PaymentRepository.class
+com\gdsc\common\service\EmailService.class
 com\gdsc\fee\dto\FeeDto.class
 com\gdsc\certification\service\CertificationService$2.class
 com\gdsc\teacher\dto\TeacherDto.class
+com\gdsc\center\dto\CenterRegistrationResponse$CenterRegistrationResponseBuilder.class
 com\gdsc\auth\service\PaymentSecurityService.class
 com\gdsc\auth\dto\RegisterRequest$RegisterRequestBuilder.class
 com\gdsc\certification\service\CertificationService$1.class
 com\gdsc\student\entity\Student.class
 com\gdsc\student\service\StudentService.class
+com\gdsc\auth\dto\UserDto.class
 com\gdsc\course\repository\CourseRepository.class
 com\gdsc\common\ApiResponse.class
 com\gdsc\course\repository\CourseCategoryRepository.class
@@ -51,6 +55,7 @@ com\gdsc\enquiry\entity\Enquiry$EnquiryStatus.class
 com\gdsc\auth\service\TeacherSecurityService.class
 com\gdsc\auth\entity\Role.class
 com\gdsc\auth\repository\RoleRepository.class
+com\gdsc\center\dto\CenterRegistrationResponse.class
 com\gdsc\auth\dto\AuthRequest.class
 com\gdsc\certification\controller\CertificationController.class
 com\gdsc\course\service\CourseService.class
@@ -61,6 +66,7 @@ com\gdsc\fee\service\FeeService.class
 com\gdsc\enquiry\entity\Enquiry$EnquirySource.class
 com\gdsc\certification\service\CertificationService$3.class
 com\gdsc\teacher\repository\TeacherRepository.class
+com\gdsc\auth\service\UserService.class
 com\gdsc\exam\service\QuestionService.class
 com\gdsc\fee\dto\PaymentDto.class
 com\gdsc\center\entity\Center$CenterStatus.class
@@ -84,9 +90,11 @@ com\gdsc\auth\config\SecurityConfig.class
 com\gdsc\student\repository\StudentRepository.class
 com\gdsc\exam\repository\ExamResultRepository.class
 com\gdsc\center\service\CenterService$2.class
+com\gdsc\center\dto\CenterRegistrationRequest.class
 com\gdsc\center\entity\Center.class
 com\gdsc\certification\entity\Certification.class
 com\gdsc\config\CorsConfig.class
+com\gdsc\auth\dto\ChangePasswordRequest.class
 com\gdsc\fee\service\PaymentService.class
 com\gdsc\fee\controller\FeeController.class
 com\gdsc\exam\controller\ExamController.class

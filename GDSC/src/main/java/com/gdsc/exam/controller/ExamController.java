@@ -86,6 +86,13 @@ public class ExamController {
         return ResponseEntity.ok(ApiResponse.success("Student exams retrieved successfully", exams));
     }
 
+    @GetMapping("/center/{centerId}")
+    @Operation(summary = "Get center exams", description = "Get all exams for a specific center")
+    public ResponseEntity<ApiResponse<List<ExamDto>>> getCenterExams(@PathVariable Long centerId) {
+        List<ExamDto> exams = examService.getExamsByCenter(centerId);
+        return ResponseEntity.ok(ApiResponse.success("Center exams retrieved successfully", exams));
+    }
+
     // Question Management Endpoints
     @GetMapping("/{examId}/questions")
     @Operation(summary = "Get exam questions", description = "Get all questions for a specific exam")

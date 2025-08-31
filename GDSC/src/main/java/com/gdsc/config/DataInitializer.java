@@ -84,6 +84,11 @@ public class DataInitializer implements CommandLineRunner {
             staffRole.setName(Role.RoleType.STAFF);
             staffRole.setDescription("Staff role for administrative tasks");
             roleRepository.save(staffRole);
+
+            Role centerRole = new Role();
+            centerRole.setName(Role.RoleType.CENTER);
+            centerRole.setDescription("Center role for center administrators");
+            roleRepository.save(centerRole);
         }
     }
 

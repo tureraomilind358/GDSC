@@ -1,0 +1,2139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.gdsc.InstituteManagementApplicationTests" time="9.978" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\GDSC\GDSC\target\test-classes;D:\GDSC\GDSC\target\classes;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.0\spring-boot-starter-web-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.0\spring-boot-starter-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot\3.2.0\spring-boot-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.0\spring-boot-autoconfigure-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.0\spring-boot-starter-logging-3.2.0.jar;C:\Users\sstur\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\sstur\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\sstur\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\sstur\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\sstur\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\sstur\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\sstur\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.0\spring-boot-starter-json-3.2.0.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.0\spring-boot-starter-tomcat-3.2.0.jar;C:\Users\sstur\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\sstur\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-web\6.1.1\spring-web-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-beans\6.1.1\spring-beans-6.1.1.jar;C:\Users\sstur\.m2\repository\io\micrometer\micrometer-observation\1.12.0\micrometer-observation-1.12.0.jar;C:\Users\sstur\.m2\repository\io\micrometer\micrometer-commons\1.12.0\micrometer-commons-1.12.0.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-webmvc\6.1.1\spring-webmvc-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-context\6.1.1\spring-context-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-expression\6.1.1\spring-expression-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.0\spring-boot-starter-data-jpa-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.0\spring-boot-starter-aop-3.2.0.jar;C:\Users\sstur\.m2\repository\org\aspectj\aspectjweaver\1.9.20.1\aspectjweaver-1.9.20.1.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.0\spring-boot-starter-jdbc-3.2.0.jar;C:\Users\sstur\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-jdbc\6.1.1\spring-jdbc-6.1.1.jar;C:\Users\sstur\.m2\repository\org\hibernate\orm\hibernate-core\6.3.1.Final\hibernate-core-6.3.1.Final.jar;C:\Users\sstur\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\sstur\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\sstur\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\sstur\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\sstur\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\sstur\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\sstur\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\sstur\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\sstur\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\sstur\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\sstur\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\sstur\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\sstur\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\sstur\.m2\repository\org\springframework\data\spring-data-jpa\3.2.0\spring-data-jpa-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\data\spring-data-commons\3.2.0\spring-data-commons-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-orm\6.1.1\spring-orm-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-tx\6.1.1\spring-tx-6.1.1.jar;C:\Users\sstur\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-aspects\6.1.1\spring-aspects-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.0\spring-boot-starter-security-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-aop\6.1.1\spring-aop-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\security\spring-security-config\6.2.0\spring-security-config-6.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\security\spring-security-web\6.2.0\spring-security-web-6.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.0\spring-boot-starter-validation-3.2.0.jar;C:\Users\sstur\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\sstur\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\sstur\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-mail\3.2.0\spring-boot-starter-mail-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-context-support\6.1.1\spring-context-support-6.1.1.jar;C:\Users\sstur\.m2\repository\org\eclipse\angus\jakarta.mail\2.0.2\jakarta.mail-2.0.2.jar;C:\Users\sstur\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\sstur\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\sstur\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;C:\Users\sstur\.m2\repository\io\jsonwebtoken\jjwt-api\0.12.3\jjwt-api-0.12.3.jar;C:\Users\sstur\.m2\repository\io\jsonwebtoken\jjwt-impl\0.12.3\jjwt-impl-0.12.3.jar;C:\Users\sstur\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.12.3\jjwt-jackson-0.12.3.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\sstur\.m2\repository\org\mapstruct\mapstruct\1.5.5.Final\mapstruct-1.5.5.Final.jar;C:\Users\sstur\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.1.0\springdoc-openapi-starter-webmvc-ui-2.1.0.jar;C:\Users\sstur\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.1.0\springdoc-openapi-starter-webmvc-api-2.1.0.jar;C:\Users\sstur\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.1.0\springdoc-openapi-starter-common-2.1.0.jar;C:\Users\sstur\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.9\swagger-core-jakarta-2.2.9.jar;C:\Users\sstur\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\sstur\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.9\swagger-annotations-jakarta-2.2.9.jar;C:\Users\sstur\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.9\swagger-models-jakarta-2.2.9.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.3\jackson-dataformat-yaml-2.15.3.jar;C:\Users\sstur\.m2\repository\org\webjars\swagger-ui\4.18.2\swagger-ui-4.18.2.jar;C:\Users\sstur\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.0\spring-boot-starter-test-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-test\3.2.0\spring-boot-test-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.0\spring-boot-test-autoconfigure-3.2.0.jar;C:\Users\sstur\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\sstur\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\sstur\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\sstur\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\sstur\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\sstur\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\sstur\.m2\repository\org\awaitility\awaitility\4.2.0\awaitility-4.2.0.jar;C:\Users\sstur\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\sstur\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.jar;C:\Users\sstur\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\sstur\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\sstur\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\sstur\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\sstur\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\sstur\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\sstur\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;C:\Users\sstur\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\sstur\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\sstur\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\sstur\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\sstur\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\sstur\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-core\6.1.1\spring-core-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-jcl\6.1.1\spring-jcl-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-test\6.1.1\spring-test-6.1.1.jar;C:\Users\sstur\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\sstur\.m2\repository\org\springframework\security\spring-security-test\6.2.0\spring-security-test-6.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\security\spring-security-core\6.2.0\spring-security-core-6.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\security\spring-security-crypto\6.2.0\spring-security-crypto-6.2.0.jar;C:\Users\sstur\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
+    <property name="sun.java.command" value="C:\Users\sstur\AppData\Local\Temp\surefire4485002578613663148\surefirebooter-20250829134517138_3.jar C:\Users\sstur\AppData\Local\Temp\surefire4485002578613663148 2025-08-29T13-45-16_961-jvmRun1 surefire-20250829134517138_1tmp surefire_0-20250829134517138_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\GDSC\GDSC\target\test-classes;D:\GDSC\GDSC\target\classes;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.0\spring-boot-starter-web-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.0\spring-boot-starter-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot\3.2.0\spring-boot-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.0\spring-boot-autoconfigure-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.0\spring-boot-starter-logging-3.2.0.jar;C:\Users\sstur\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\sstur\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\sstur\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\sstur\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\sstur\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\sstur\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\sstur\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.0\spring-boot-starter-json-3.2.0.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.3\jackson-datatype-jdk8-2.15.3.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.3\jackson-datatype-jsr310-2.15.3.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.3\jackson-module-parameter-names-2.15.3.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.0\spring-boot-starter-tomcat-3.2.0.jar;C:\Users\sstur\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.16\tomcat-embed-core-10.1.16.jar;C:\Users\sstur\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.16\tomcat-embed-websocket-10.1.16.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-web\6.1.1\spring-web-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-beans\6.1.1\spring-beans-6.1.1.jar;C:\Users\sstur\.m2\repository\io\micrometer\micrometer-observation\1.12.0\micrometer-observation-1.12.0.jar;C:\Users\sstur\.m2\repository\io\micrometer\micrometer-commons\1.12.0\micrometer-commons-1.12.0.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-webmvc\6.1.1\spring-webmvc-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-context\6.1.1\spring-context-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-expression\6.1.1\spring-expression-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.0\spring-boot-starter-data-jpa-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.0\spring-boot-starter-aop-3.2.0.jar;C:\Users\sstur\.m2\repository\org\aspectj\aspectjweaver\1.9.20.1\aspectjweaver-1.9.20.1.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.0\spring-boot-starter-jdbc-3.2.0.jar;C:\Users\sstur\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-jdbc\6.1.1\spring-jdbc-6.1.1.jar;C:\Users\sstur\.m2\repository\org\hibernate\orm\hibernate-core\6.3.1.Final\hibernate-core-6.3.1.Final.jar;C:\Users\sstur\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\sstur\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\sstur\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\sstur\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\sstur\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\sstur\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\sstur\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\sstur\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.4\jaxb-runtime-4.0.4.jar;C:\Users\sstur\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.4\jaxb-core-4.0.4.jar;C:\Users\sstur\.m2\repository\org\glassfish\jaxb\txw2\4.0.4\txw2-4.0.4.jar;C:\Users\sstur\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\sstur\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\sstur\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\sstur\.m2\repository\org\springframework\data\spring-data-jpa\3.2.0\spring-data-jpa-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\data\spring-data-commons\3.2.0\spring-data-commons-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-orm\6.1.1\spring-orm-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-tx\6.1.1\spring-tx-6.1.1.jar;C:\Users\sstur\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-aspects\6.1.1\spring-aspects-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.0\spring-boot-starter-security-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-aop\6.1.1\spring-aop-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\security\spring-security-config\6.2.0\spring-security-config-6.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\security\spring-security-web\6.2.0\spring-security-web-6.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.0\spring-boot-starter-validation-3.2.0.jar;C:\Users\sstur\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.16\tomcat-embed-el-10.1.16.jar;C:\Users\sstur\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\sstur\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-mail\3.2.0\spring-boot-starter-mail-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-context-support\6.1.1\spring-context-support-6.1.1.jar;C:\Users\sstur\.m2\repository\org\eclipse\angus\jakarta.mail\2.0.2\jakarta.mail-2.0.2.jar;C:\Users\sstur\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\sstur\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\sstur\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;C:\Users\sstur\.m2\repository\io\jsonwebtoken\jjwt-api\0.12.3\jjwt-api-0.12.3.jar;C:\Users\sstur\.m2\repository\io\jsonwebtoken\jjwt-impl\0.12.3\jjwt-impl-0.12.3.jar;C:\Users\sstur\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.12.3\jjwt-jackson-0.12.3.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.3\jackson-databind-2.15.3.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.3\jackson-annotations-2.15.3.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.3\jackson-core-2.15.3.jar;C:\Users\sstur\.m2\repository\org\mapstruct\mapstruct\1.5.5.Final\mapstruct-1.5.5.Final.jar;C:\Users\sstur\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.1.0\springdoc-openapi-starter-webmvc-ui-2.1.0.jar;C:\Users\sstur\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.1.0\springdoc-openapi-starter-webmvc-api-2.1.0.jar;C:\Users\sstur\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.1.0\springdoc-openapi-starter-common-2.1.0.jar;C:\Users\sstur\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.9\swagger-core-jakarta-2.2.9.jar;C:\Users\sstur\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\sstur\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.9\swagger-annotations-jakarta-2.2.9.jar;C:\Users\sstur\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.9\swagger-models-jakarta-2.2.9.jar;C:\Users\sstur\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.3\jackson-dataformat-yaml-2.15.3.jar;C:\Users\sstur\.m2\repository\org\webjars\swagger-ui\4.18.2\swagger-ui-4.18.2.jar;C:\Users\sstur\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.0\spring-boot-starter-test-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-test\3.2.0\spring-boot-test-3.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.0\spring-boot-test-autoconfigure-3.2.0.jar;C:\Users\sstur\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\sstur\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\sstur\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\sstur\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\sstur\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\sstur\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\sstur\.m2\repository\org\awaitility\awaitility\4.2.0\awaitility-4.2.0.jar;C:\Users\sstur\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\sstur\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.jar;C:\Users\sstur\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\sstur\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\sstur\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\sstur\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\sstur\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\sstur\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\sstur\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;C:\Users\sstur\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\sstur\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\sstur\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\sstur\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\sstur\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\sstur\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-core\6.1.1\spring-core-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-jcl\6.1.1\spring-jcl-6.1.1.jar;C:\Users\sstur\.m2\repository\org\springframework\spring-test\6.1.1\spring-test-6.1.1.jar;C:\Users\sstur\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\sstur\.m2\repository\org\springframework\security\spring-security-test\6.2.0\spring-security-test-6.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\security\spring-security-core\6.2.0\spring-security-core-6.2.0.jar;C:\Users\sstur\.m2\repository\org\springframework\security\spring-security-crypto\6.2.0\spring-security-crypto-6.2.0.jar;C:\Users\sstur\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\sstur"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\GDSC\GDSC"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\sstur\AppData\Local\Temp\surefire4485002578613663148\surefirebooter-20250829134517138_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.5+9-LTS-239"/>
+    <property name="user.name" value="sstur"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\sstur\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\sstur\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2024.3.1.1"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="21.0.5"/>
+    <property name="user.dir" value="D:\GDSC\GDSC"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="21304"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-21;D:\maven\bin;C:\Program Files\nodejs\;C:\Users\sstur\AppData\Local\Microsoft\WindowsApps;C:\Users\sstur\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.1.1\bin;;C:\Users\sstur\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\sstur\AppData\Roaming\npm;C:\Users\sstur\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\sstur\AppData\Local\Programs\Windsurf\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.5+9-LTS-239"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[Institute Management System] "/>
+  </properties>
+  <testcase name="contextLoads" classname="com.gdsc.InstituteManagementApplicationTests" time="0.513">
+    <system-out><![CDATA[13:45:18.098 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.gdsc.InstituteManagementApplicationTests]: InstituteManagementApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:45:18.278 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.gdsc.InstituteManagementApplication for test class com.gdsc.InstituteManagementApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-08-29T13:45:18.862+05:30  INFO 21304 --- [Institute Management System] [           main] c.g.InstituteManagementApplicationTests  : Starting InstituteManagementApplicationTests using Java 21.0.5 with PID 21304 (started by sstur in D:\GDSC\GDSC)
+2025-08-29T13:45:18.862+05:30 DEBUG 21304 --- [Institute Management System] [           main] c.g.InstituteManagementApplicationTests  : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-08-29T13:45:18.868+05:30  INFO 21304 --- [Institute Management System] [           main] c.g.InstituteManagementApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2025-08-29T13:45:18.898+05:30 DEBUG 21304 --- [Institute Management System] [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3163987e
+2025-08-29T13:45:20.088+05:30  INFO 21304 --- [Institute Management System] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-29T13:45:20.200+05:30  INFO 21304 --- [Institute Management System] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 14 JPA repository interfaces.
+2025-08-29T13:45:20.888+05:30  INFO 21304 --- [Institute Management System] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-29T13:45:21.038+05:30  INFO 21304 --- [Institute Management System] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-08-29T13:45:21.088+05:30  INFO 21304 --- [Institute Management System] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-29T13:45:21.458+05:30  INFO 21304 --- [Institute Management System] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-29T13:45:21.505+05:30  INFO 21304 --- [Institute Management System] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-29T13:45:21.703+05:30  INFO 21304 --- [Institute Management System] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:institute_db user=SA
+2025-08-29T13:45:21.706+05:30  INFO 21304 --- [Institute Management System] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-29T13:45:21.739+05:30  WARN 21304 --- [Institute Management System] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-29T13:45:23.393+05:30  INFO 21304 --- [Institute Management System] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-29T13:45:23.408+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists centers cascade 
+Hibernate: 
+    drop table if exists centers cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists certifications cascade 
+Hibernate: 
+    drop table if exists certifications cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists course_categories cascade 
+Hibernate: 
+    drop table if exists course_categories cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists course_students cascade 
+Hibernate: 
+    drop table if exists course_students cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists course_teachers cascade 
+Hibernate: 
+    drop table if exists course_teachers cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists courses cascade 
+Hibernate: 
+    drop table if exists courses cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists enquiries cascade 
+Hibernate: 
+    drop table if exists enquiries cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists exam_results cascade 
+Hibernate: 
+    drop table if exists exam_results cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists exam_students cascade 
+Hibernate: 
+    drop table if exists exam_students cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists exams cascade 
+Hibernate: 
+    drop table if exists exams cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists fees cascade 
+Hibernate: 
+    drop table if exists fees cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists payments cascade 
+Hibernate: 
+    drop table if exists payments cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists question_options cascade 
+Hibernate: 
+    drop table if exists question_options cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists questions cascade 
+Hibernate: 
+    drop table if exists questions cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists roles cascade 
+Hibernate: 
+    drop table if exists roles cascade 
+2025-08-29T13:45:23.412+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists student_answers cascade 
+Hibernate: 
+    drop table if exists student_answers cascade 
+2025-08-29T13:45:23.416+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists student_courses cascade 
+Hibernate: 
+    drop table if exists student_courses cascade 
+2025-08-29T13:45:23.416+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists students cascade 
+Hibernate: 
+    drop table if exists students cascade 
+2025-08-29T13:45:23.416+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists teacher_courses cascade 
+Hibernate: 
+    drop table if exists teacher_courses cascade 
+2025-08-29T13:45:23.416+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists teachers cascade 
+Hibernate: 
+    drop table if exists teachers cascade 
+2025-08-29T13:45:23.416+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists user_roles cascade 
+Hibernate: 
+    drop table if exists user_roles cascade 
+2025-08-29T13:45:23.416+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    drop table if exists users cascade 
+Hibernate: 
+    drop table if exists users cascade 
+2025-08-29T13:45:23.424+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table centers (
+        capacity integer not null,
+        current_enrollment integer,
+        is_active boolean not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        address varchar(255) not null,
+        city varchar(255) not null,
+        code varchar(255) not null unique,
+        country varchar(255) not null,
+        description varchar(255),
+        email varchar(255),
+        facilities varchar(255),
+        name varchar(255) not null,
+        opening_hours varchar(255),
+        phone varchar(255),
+        postal_code varchar(255),
+        state varchar(255) not null,
+        status varchar(255) not null check (status in ('ACTIVE','INACTIVE','MAINTENANCE','CLOSED')),
+        website varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table centers (
+        capacity integer not null,
+        current_enrollment integer,
+        is_active boolean not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        address varchar(255) not null,
+        city varchar(255) not null,
+        code varchar(255) not null unique,
+        country varchar(255) not null,
+        description varchar(255),
+        email varchar(255),
+        facilities varchar(255),
+        name varchar(255) not null,
+        opening_hours varchar(255),
+        phone varchar(255),
+        postal_code varchar(255),
+        state varchar(255) not null,
+        status varchar(255) not null check (status in ('ACTIVE','INACTIVE','MAINTENANCE','CLOSED')),
+        website varchar(255),
+        primary key (id)
+    )
+2025-08-29T13:45:23.444+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table certifications (
+        expiry_date date,
+        is_active boolean not null,
+        is_verified boolean,
+        issue_date date not null,
+        verification_count integer,
+        center_id bigint,
+        course_id bigint not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        issued_at timestamp(6),
+        last_verified_at timestamp(6),
+        revoked_at timestamp(6),
+        student_id bigint not null,
+        updated_at timestamp(6),
+        certificate_id varchar(255) not null unique,
+        certificate_url varchar(255),
+        issued_by varchar(255),
+        pdf_path varchar(255),
+        remarks varchar(255),
+        revocation_reason varchar(255),
+        status varchar(255) not null check (status in ('ACTIVE','EXPIRED','REVOKED','SUSPENDED')),
+        verification_code varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table certifications (
+        expiry_date date,
+        is_active boolean not null,
+        is_verified boolean,
+        issue_date date not null,
+        verification_count integer,
+        center_id bigint,
+        course_id bigint not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        issued_at timestamp(6),
+        last_verified_at timestamp(6),
+        revoked_at timestamp(6),
+        student_id bigint not null,
+        updated_at timestamp(6),
+        certificate_id varchar(255) not null unique,
+        certificate_url varchar(255),
+        issued_by varchar(255),
+        pdf_path varchar(255),
+        remarks varchar(255),
+        revocation_reason varchar(255),
+        status varchar(255) not null check (status in ('ACTIVE','EXPIRED','REVOKED','SUSPENDED')),
+        verification_code varchar(255),
+        primary key (id)
+    )
+2025-08-29T13:45:23.448+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table course_categories (
+        is_active boolean not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        color varchar(255),
+        description varchar(255),
+        icon varchar(255),
+        name varchar(255) not null unique,
+        primary key (id)
+    )
+Hibernate: 
+    create table course_categories (
+        is_active boolean not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        color varchar(255),
+        description varchar(255),
+        icon varchar(255),
+        name varchar(255) not null unique,
+        primary key (id)
+    )
+2025-08-29T13:45:23.450+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table course_students (
+        course_id bigint not null,
+        student_id bigint not null,
+        primary key (course_id, student_id)
+    )
+Hibernate: 
+    create table course_students (
+        course_id bigint not null,
+        student_id bigint not null,
+        primary key (course_id, student_id)
+    )
+2025-08-29T13:45:23.450+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table course_teachers (
+        course_id bigint not null,
+        teacher_id bigint not null,
+        primary key (course_id, teacher_id)
+    )
+Hibernate: 
+    create table course_teachers (
+        course_id bigint not null,
+        teacher_id bigint not null,
+        primary key (course_id, teacher_id)
+    )
+2025-08-29T13:45:23.450+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table courses (
+        discount_percentage integer,
+        duration_hours integer not null,
+        fees numeric(10,2) not null,
+        is_active boolean not null,
+        is_published boolean not null,
+        max_students integer,
+        category_id bigint not null,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        description TEXT,
+        image_url varchar(255),
+        name varchar(255) not null,
+        platforms varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table courses (
+        discount_percentage integer,
+        duration_hours integer not null,
+        fees numeric(10,2) not null,
+        is_active boolean not null,
+        is_published boolean not null,
+        max_students integer,
+        category_id bigint not null,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        description TEXT,
+        image_url varchar(255),
+        name varchar(255) not null,
+        platforms varchar(255),
+        primary key (id)
+    )
+2025-08-29T13:45:23.453+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table enquiries (
+        converted_to_student boolean,
+        is_active boolean not null,
+        priority integer,
+        center_id bigint,
+        conversion_date timestamp(6),
+        created_at timestamp(6) not null,
+        follow_up_date timestamp(6),
+        id bigint generated by default as identity,
+        interested_course_id bigint,
+        updated_at timestamp(6),
+        address varchar(255),
+        assigned_to varchar(255),
+        city varchar(255),
+        country varchar(255),
+        email varchar(255) not null,
+        message TEXT,
+        name varchar(255) not null,
+        notes TEXT,
+        phone varchar(255),
+        postal_code varchar(255),
+        source varchar(255) check (source in ('WEBSITE','REFERRAL','SOCIAL_MEDIA','ADVERTISEMENT','WALK_IN','PHONE','OTHER')),
+        state varchar(255),
+        status varchar(255) not null check (status in ('NEW','IN_PROGRESS','CONTACTED','FOLLOW_UP','CONVERTED','LOST','CLOSED')),
+        primary key (id)
+    )
+Hibernate: 
+    create table enquiries (
+        converted_to_student boolean,
+        is_active boolean not null,
+        priority integer,
+        center_id bigint,
+        conversion_date timestamp(6),
+        created_at timestamp(6) not null,
+        follow_up_date timestamp(6),
+        id bigint generated by default as identity,
+        interested_course_id bigint,
+        updated_at timestamp(6),
+        address varchar(255),
+        assigned_to varchar(255),
+        city varchar(255),
+        country varchar(255),
+        email varchar(255) not null,
+        message TEXT,
+        name varchar(255) not null,
+        notes TEXT,
+        phone varchar(255),
+        postal_code varchar(255),
+        source varchar(255) check (source in ('WEBSITE','REFERRAL','SOCIAL_MEDIA','ADVERTISEMENT','WALK_IN','PHONE','OTHER')),
+        state varchar(255),
+        status varchar(255) not null check (status in ('NEW','IN_PROGRESS','CONTACTED','FOLLOW_UP','CONVERTED','LOST','CLOSED')),
+        primary key (id)
+    )
+2025-08-29T13:45:23.453+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table exam_results (
+        is_active boolean not null,
+        is_published boolean,
+        obtained_marks integer not null,
+        percentage float(53),
+        rank integer,
+        total_marks integer not null,
+        total_students integer,
+        total_time_taken_minutes integer,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        evaluation_date timestamp(6),
+        exam_end_time timestamp(6),
+        exam_id bigint not null,
+        exam_start_time timestamp(6),
+        id bigint generated by default as identity,
+        published_date timestamp(6),
+        student_id bigint not null,
+        updated_at timestamp(6),
+        evaluated_by varchar(255),
+        grade varchar(255),
+        remarks varchar(255),
+        result_status varchar(255) not null check (result_status in ('PASS','FAIL','ABSENT','DISQUALIFIED')),
+        primary key (id)
+    )
+Hibernate: 
+    create table exam_results (
+        is_active boolean not null,
+        is_published boolean,
+        obtained_marks integer not null,
+        percentage float(53),
+        rank integer,
+        total_marks integer not null,
+        total_students integer,
+        total_time_taken_minutes integer,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        evaluation_date timestamp(6),
+        exam_end_time timestamp(6),
+        exam_id bigint not null,
+        exam_start_time timestamp(6),
+        id bigint generated by default as identity,
+        published_date timestamp(6),
+        student_id bigint not null,
+        updated_at timestamp(6),
+        evaluated_by varchar(255),
+        grade varchar(255),
+        remarks varchar(255),
+        result_status varchar(255) not null check (result_status in ('PASS','FAIL','ABSENT','DISQUALIFIED')),
+        primary key (id)
+    )
+2025-08-29T13:45:23.455+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table exam_students (
+        exam_id bigint not null,
+        student_id bigint not null,
+        primary key (exam_id, student_id)
+    )
+Hibernate: 
+    create table exam_students (
+        exam_id bigint not null,
+        student_id bigint not null,
+        primary key (exam_id, student_id)
+    )
+2025-08-29T13:45:23.455+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table exams (
+        duration_minutes integer not null,
+        is_active boolean not null,
+        is_online boolean not null,
+        passing_marks integer,
+        total_marks integer,
+        center_id bigint,
+        course_id bigint not null,
+        created_at timestamp(6) not null,
+        exam_date timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        description TEXT,
+        exam_link varchar(255),
+        exam_type varchar(255) not null check (exam_type in ('MCQ','DESCRIPTIVE','MIXED','PRACTICAL','ORAL','PROJECT')),
+        instructions TEXT,
+        name varchar(255) not null,
+        status varchar(255) not null check (status in ('SCHEDULED','IN_PROGRESS','COMPLETED','CANCELLED','POSTPONED')),
+        primary key (id)
+    )
+Hibernate: 
+    create table exams (
+        duration_minutes integer not null,
+        is_active boolean not null,
+        is_online boolean not null,
+        passing_marks integer,
+        total_marks integer,
+        center_id bigint,
+        course_id bigint not null,
+        created_at timestamp(6) not null,
+        exam_date timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        description TEXT,
+        exam_link varchar(255),
+        exam_type varchar(255) not null check (exam_type in ('MCQ','DESCRIPTIVE','MIXED','PRACTICAL','ORAL','PROJECT')),
+        instructions TEXT,
+        name varchar(255) not null,
+        status varchar(255) not null check (status in ('SCHEDULED','IN_PROGRESS','COMPLETED','CANCELLED','POSTPONED')),
+        primary key (id)
+    )
+2025-08-29T13:45:23.460+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table fees (
+        current_installment integer,
+        discount_amount numeric(10,2),
+        due_date date not null,
+        installments integer,
+        is_active boolean not null,
+        late_fee numeric(10,2),
+        paid_amount numeric(10,0),
+        pending_amount numeric(10,2),
+        total_amount numeric(10,2) not null,
+        center_id bigint,
+        course_id bigint not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        student_id bigint not null,
+        updated_at timestamp(6),
+        discount_reason varchar(255),
+        payment_plan varchar(255),
+        status varchar(255) not null check (status in ('PENDING','PARTIAL','PAID','OVERDUE','CANCELLED')),
+        primary key (id)
+    )
+Hibernate: 
+    create table fees (
+        current_installment integer,
+        discount_amount numeric(10,2),
+        due_date date not null,
+        installments integer,
+        is_active boolean not null,
+        late_fee numeric(10,2),
+        paid_amount numeric(10,0),
+        pending_amount numeric(10,2),
+        total_amount numeric(10,2) not null,
+        center_id bigint,
+        course_id bigint not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        student_id bigint not null,
+        updated_at timestamp(6),
+        discount_reason varchar(255),
+        payment_plan varchar(255),
+        status varchar(255) not null check (status in ('PENDING','PARTIAL','PAID','OVERDUE','CANCELLED')),
+        primary key (id)
+    )
+2025-08-29T13:45:23.462+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table payments (
+        amount numeric(10,2) not null,
+        gateway_fee numeric(10,2),
+        is_active boolean not null,
+        retry_count integer,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        fee_id bigint not null,
+        id bigint generated by default as identity,
+        last_retry_date timestamp(6),
+        payment_date timestamp(6),
+        updated_at timestamp(6),
+        gateway_reference varchar(255),
+        gateway_response varchar(255),
+        notes varchar(255),
+        payment_method varchar(255) not null check (payment_method in ('CASH','CHEQUE','BANK_TRANSFER','CREDIT_CARD','DEBIT_CARD','ONLINE_PAYMENT','UPI','WALLET')),
+        receipt_number varchar(255),
+        status varchar(255) not null check (status in ('PENDING','SUCCESS','FAILED','CANCELLED','REFUNDED','PARTIALLY_REFUNDED')),
+        transaction_id varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table payments (
+        amount numeric(10,2) not null,
+        gateway_fee numeric(10,2),
+        is_active boolean not null,
+        retry_count integer,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        fee_id bigint not null,
+        id bigint generated by default as identity,
+        last_retry_date timestamp(6),
+        payment_date timestamp(6),
+        updated_at timestamp(6),
+        gateway_reference varchar(255),
+        gateway_response varchar(255),
+        notes varchar(255),
+        payment_method varchar(255) not null check (payment_method in ('CASH','CHEQUE','BANK_TRANSFER','CREDIT_CARD','DEBIT_CARD','ONLINE_PAYMENT','UPI','WALLET')),
+        receipt_number varchar(255),
+        status varchar(255) not null check (status in ('PENDING','SUCCESS','FAILED','CANCELLED','REFUNDED','PARTIALLY_REFUNDED')),
+        transaction_id varchar(255),
+        primary key (id)
+    )
+2025-08-29T13:45:23.464+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table question_options (
+        display_order integer,
+        is_active boolean not null,
+        is_correct boolean not null,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        question_id bigint not null,
+        updated_at timestamp(6),
+        explanation varchar(255),
+        option_letter varchar(255),
+        option_text TEXT not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table question_options (
+        display_order integer,
+        is_active boolean not null,
+        is_correct boolean not null,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        question_id bigint not null,
+        updated_at timestamp(6),
+        explanation varchar(255),
+        option_letter varchar(255),
+        option_text TEXT not null,
+        primary key (id)
+    )
+2025-08-29T13:45:23.464+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table questions (
+        is_active boolean not null,
+        marks integer not null,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        exam_id bigint not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        correct_answer TEXT,
+        difficulty_level varchar(255),
+        explanation TEXT,
+        question_text TEXT not null,
+        question_type varchar(255) not null check (question_type in ('MCQ','DESCRIPTIVE','TRUE_FALSE','MATCHING','FILL_IN_THE_BLANK')),
+        topic varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table questions (
+        is_active boolean not null,
+        marks integer not null,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        exam_id bigint not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        correct_answer TEXT,
+        difficulty_level varchar(255),
+        explanation TEXT,
+        question_text TEXT not null,
+        question_type varchar(255) not null check (question_type in ('MCQ','DESCRIPTIVE','TRUE_FALSE','MATCHING','FILL_IN_THE_BLANK')),
+        topic varchar(255),
+        primary key (id)
+    )
+2025-08-29T13:45:23.466+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table roles (
+        is_active boolean not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        description varchar(255),
+        name varchar(255) not null unique check (name in ('ADMIN','TEACHER','STUDENT','STAFF','CENTER')),
+        primary key (id)
+    )
+Hibernate: 
+    create table roles (
+        is_active boolean not null,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        description varchar(255),
+        name varchar(255) not null unique check (name in ('ADMIN','TEACHER','STUDENT','STAFF','CENTER')),
+        primary key (id)
+    )
+2025-08-29T13:45:23.466+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table student_answers (
+        is_active boolean not null,
+        is_correct boolean,
+        is_reviewed boolean,
+        marks_obtained integer,
+        time_taken_seconds integer,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        exam_id bigint not null,
+        id bigint generated by default as identity,
+        question_id bigint not null,
+        review_date timestamp(6),
+        selected_option_id bigint,
+        student_id bigint not null,
+        submission_time timestamp(6),
+        updated_at timestamp(6),
+        answer_text TEXT,
+        review_notes varchar(255),
+        reviewed_by varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    create table student_answers (
+        is_active boolean not null,
+        is_correct boolean,
+        is_reviewed boolean,
+        marks_obtained integer,
+        time_taken_seconds integer,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        exam_id bigint not null,
+        id bigint generated by default as identity,
+        question_id bigint not null,
+        review_date timestamp(6),
+        selected_option_id bigint,
+        student_id bigint not null,
+        submission_time timestamp(6),
+        updated_at timestamp(6),
+        answer_text TEXT,
+        review_notes varchar(255),
+        reviewed_by varchar(255),
+        primary key (id)
+    )
+2025-08-29T13:45:23.468+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table student_courses (
+        course_id bigint not null,
+        student_id bigint not null,
+        primary key (course_id, student_id)
+    )
+Hibernate: 
+    create table student_courses (
+        course_id bigint not null,
+        student_id bigint not null,
+        primary key (course_id, student_id)
+    )
+2025-08-29T13:45:23.468+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table students (
+        date_of_birth date not null,
+        enrollment_date date,
+        graduation_date date,
+        is_active boolean not null,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        user_id bigint not null unique,
+        address varchar(255),
+        city varchar(255),
+        country varchar(255),
+        email varchar(255) not null unique,
+        emergency_contact varchar(255),
+        first_name varchar(255) not null,
+        gender varchar(255) not null check (gender in ('MALE','FEMALE','OTHER')),
+        last_name varchar(255) not null,
+        parent_name varchar(255),
+        parent_phone varchar(255),
+        phone varchar(255),
+        postal_code varchar(255),
+        state varchar(255),
+        status varchar(255) not null check (status in ('ACTIVE','INACTIVE','GRADUATED','SUSPENDED')),
+        primary key (id)
+    )
+Hibernate: 
+    create table students (
+        date_of_birth date not null,
+        enrollment_date date,
+        graduation_date date,
+        is_active boolean not null,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        user_id bigint not null unique,
+        address varchar(255),
+        city varchar(255),
+        country varchar(255),
+        email varchar(255) not null unique,
+        emergency_contact varchar(255),
+        first_name varchar(255) not null,
+        gender varchar(255) not null check (gender in ('MALE','FEMALE','OTHER')),
+        last_name varchar(255) not null,
+        parent_name varchar(255),
+        parent_phone varchar(255),
+        phone varchar(255),
+        postal_code varchar(255),
+        state varchar(255),
+        status varchar(255) not null check (status in ('ACTIVE','INACTIVE','GRADUATED','SUSPENDED')),
+        primary key (id)
+    )
+2025-08-29T13:45:23.470+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table teacher_courses (
+        course_id bigint not null,
+        teacher_id bigint not null,
+        primary key (course_id, teacher_id)
+    )
+Hibernate: 
+    create table teacher_courses (
+        course_id bigint not null,
+        teacher_id bigint not null,
+        primary key (course_id, teacher_id)
+    )
+2025-08-29T13:45:23.472+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table teachers (
+        date_of_birth date not null,
+        hourly_rate numeric(10,2),
+        is_active boolean not null,
+        joining_date date,
+        years_of_experience integer,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        user_id bigint not null unique,
+        address varchar(255),
+        city varchar(255),
+        country varchar(255),
+        email varchar(255) not null unique,
+        experience TEXT,
+        expertise TEXT,
+        first_name varchar(255) not null,
+        gender varchar(255) not null check (gender in ('MALE','FEMALE','OTHER')),
+        last_name varchar(255) not null,
+        phone varchar(255),
+        postal_code varchar(255),
+        qualifications TEXT,
+        state varchar(255),
+        status varchar(255) not null check (status in ('ACTIVE','INACTIVE','ON_LEAVE','TERMINATED')),
+        primary key (id)
+    )
+Hibernate: 
+    create table teachers (
+        date_of_birth date not null,
+        hourly_rate numeric(10,2),
+        is_active boolean not null,
+        joining_date date,
+        years_of_experience integer,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        user_id bigint not null unique,
+        address varchar(255),
+        city varchar(255),
+        country varchar(255),
+        email varchar(255) not null unique,
+        experience TEXT,
+        expertise TEXT,
+        first_name varchar(255) not null,
+        gender varchar(255) not null check (gender in ('MALE','FEMALE','OTHER')),
+        last_name varchar(255) not null,
+        phone varchar(255),
+        postal_code varchar(255),
+        qualifications TEXT,
+        state varchar(255),
+        status varchar(255) not null check (status in ('ACTIVE','INACTIVE','ON_LEAVE','TERMINATED')),
+        primary key (id)
+    )
+2025-08-29T13:45:23.474+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table user_roles (
+        role_id bigint not null,
+        user_id bigint not null,
+        primary key (role_id, user_id)
+    )
+Hibernate: 
+    create table user_roles (
+        role_id bigint not null,
+        user_id bigint not null,
+        primary key (role_id, user_id)
+    )
+2025-08-29T13:45:23.474+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    create table users (
+        is_account_non_expired boolean not null,
+        is_account_non_locked boolean not null,
+        is_active boolean not null,
+        is_credentials_non_expired boolean not null,
+        is_enabled boolean not null,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        email varchar(255) not null unique,
+        first_name varchar(255),
+        last_name varchar(255),
+        password varchar(255) not null,
+        phone varchar(255),
+        username varchar(255) not null unique,
+        primary key (id)
+    )
+Hibernate: 
+    create table users (
+        is_account_non_expired boolean not null,
+        is_account_non_locked boolean not null,
+        is_active boolean not null,
+        is_credentials_non_expired boolean not null,
+        is_enabled boolean not null,
+        center_id bigint,
+        created_at timestamp(6) not null,
+        id bigint generated by default as identity,
+        updated_at timestamp(6),
+        email varchar(255) not null unique,
+        first_name varchar(255),
+        last_name varchar(255),
+        password varchar(255) not null,
+        phone varchar(255),
+        username varchar(255) not null unique,
+        primary key (id)
+    )
+2025-08-29T13:45:23.476+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists certifications 
+       add constraint FK45yur2jtrlhsrtjnpso0o76rl 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists certifications 
+       add constraint FK45yur2jtrlhsrtjnpso0o76rl 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.483+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists certifications 
+       add constraint FK2umobpj56nfh2n0w5d8f9bm29 
+       foreign key (course_id) 
+       references courses
+Hibernate: 
+    alter table if exists certifications 
+       add constraint FK2umobpj56nfh2n0w5d8f9bm29 
+       foreign key (course_id) 
+       references courses
+2025-08-29T13:45:23.488+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists certifications 
+       add constraint FKr5iqfbid02iheuwf2tlyk4o5l 
+       foreign key (student_id) 
+       references students
+Hibernate: 
+    alter table if exists certifications 
+       add constraint FKr5iqfbid02iheuwf2tlyk4o5l 
+       foreign key (student_id) 
+       references students
+2025-08-29T13:45:23.488+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists course_students 
+       add constraint FKcedy62b1kx0ll1ggwkh25ubxh 
+       foreign key (student_id) 
+       references users
+Hibernate: 
+    alter table if exists course_students 
+       add constraint FKcedy62b1kx0ll1ggwkh25ubxh 
+       foreign key (student_id) 
+       references users
+2025-08-29T13:45:23.488+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists course_students 
+       add constraint FKj5fbpmgy0y0es0gvk0311jor3 
+       foreign key (course_id) 
+       references courses
+Hibernate: 
+    alter table if exists course_students 
+       add constraint FKj5fbpmgy0y0es0gvk0311jor3 
+       foreign key (course_id) 
+       references courses
+2025-08-29T13:45:23.491+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists course_teachers 
+       add constraint FK5aigtu1y48ka3tg6e6wh0j75s 
+       foreign key (teacher_id) 
+       references users
+Hibernate: 
+    alter table if exists course_teachers 
+       add constraint FK5aigtu1y48ka3tg6e6wh0j75s 
+       foreign key (teacher_id) 
+       references users
+2025-08-29T13:45:23.493+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists course_teachers 
+       add constraint FK84v77efghiwpxgicxggm5rpdv 
+       foreign key (course_id) 
+       references courses
+Hibernate: 
+    alter table if exists course_teachers 
+       add constraint FK84v77efghiwpxgicxggm5rpdv 
+       foreign key (course_id) 
+       references courses
+2025-08-29T13:45:23.495+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists courses 
+       add constraint FKlrqjut8xtbtgs6h7uosddyut7 
+       foreign key (category_id) 
+       references course_categories
+Hibernate: 
+    alter table if exists courses 
+       add constraint FKlrqjut8xtbtgs6h7uosddyut7 
+       foreign key (category_id) 
+       references course_categories
+2025-08-29T13:45:23.495+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists courses 
+       add constraint FK64gsw8d5x4rlgxy12o0ptespo 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists courses 
+       add constraint FK64gsw8d5x4rlgxy12o0ptespo 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.495+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists enquiries 
+       add constraint FK7jq66q3sxu1ex7ive401gdx4i 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists enquiries 
+       add constraint FK7jq66q3sxu1ex7ive401gdx4i 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.498+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists enquiries 
+       add constraint FK7w5f1qh9xxtpjiuijys1nd66c 
+       foreign key (interested_course_id) 
+       references courses
+Hibernate: 
+    alter table if exists enquiries 
+       add constraint FK7w5f1qh9xxtpjiuijys1nd66c 
+       foreign key (interested_course_id) 
+       references courses
+2025-08-29T13:45:23.500+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists exam_results 
+       add constraint FKe268yhmk6hvac0qnu7tafnipv 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists exam_results 
+       add constraint FKe268yhmk6hvac0qnu7tafnipv 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.500+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists exam_results 
+       add constraint FKtf85ht7yquiorwjx2xbdx3fxw 
+       foreign key (exam_id) 
+       references exams
+Hibernate: 
+    alter table if exists exam_results 
+       add constraint FKtf85ht7yquiorwjx2xbdx3fxw 
+       foreign key (exam_id) 
+       references exams
+2025-08-29T13:45:23.500+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists exam_results 
+       add constraint FKr7qgl670f47u65kkdm8ex5119 
+       foreign key (student_id) 
+       references students
+Hibernate: 
+    alter table if exists exam_results 
+       add constraint FKr7qgl670f47u65kkdm8ex5119 
+       foreign key (student_id) 
+       references students
+2025-08-29T13:45:23.500+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists exam_students 
+       add constraint FK65je6wuwel4i8f1f9rle73bec 
+       foreign key (student_id) 
+       references students
+Hibernate: 
+    alter table if exists exam_students 
+       add constraint FK65je6wuwel4i8f1f9rle73bec 
+       foreign key (student_id) 
+       references students
+2025-08-29T13:45:23.500+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists exam_students 
+       add constraint FK6r5kumkfq7e03btoddiva3jdt 
+       foreign key (exam_id) 
+       references exams
+Hibernate: 
+    alter table if exists exam_students 
+       add constraint FK6r5kumkfq7e03btoddiva3jdt 
+       foreign key (exam_id) 
+       references exams
+2025-08-29T13:45:23.500+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists exams 
+       add constraint FK3k0ifg2mojh4ji167e2t8fk2n 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists exams 
+       add constraint FK3k0ifg2mojh4ji167e2t8fk2n 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.508+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists exams 
+       add constraint FKr1qm93flajdaclug2fg8i7bcg 
+       foreign key (course_id) 
+       references courses
+Hibernate: 
+    alter table if exists exams 
+       add constraint FKr1qm93flajdaclug2fg8i7bcg 
+       foreign key (course_id) 
+       references courses
+2025-08-29T13:45:23.508+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists fees 
+       add constraint FK14ovk74ae523xf5d5prka3ygs 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists fees 
+       add constraint FK14ovk74ae523xf5d5prka3ygs 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.510+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists fees 
+       add constraint FK15r45xbwoxadhy4h8428egqrm 
+       foreign key (course_id) 
+       references courses
+Hibernate: 
+    alter table if exists fees 
+       add constraint FK15r45xbwoxadhy4h8428egqrm 
+       foreign key (course_id) 
+       references courses
+2025-08-29T13:45:23.510+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists fees 
+       add constraint FKh56p3es1h1lt6ge4cl3by4oko 
+       foreign key (student_id) 
+       references students
+Hibernate: 
+    alter table if exists fees 
+       add constraint FKh56p3es1h1lt6ge4cl3by4oko 
+       foreign key (student_id) 
+       references students
+2025-08-29T13:45:23.512+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists payments 
+       add constraint FKjgpp0ddcs8eexq31etkjd3v98 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists payments 
+       add constraint FKjgpp0ddcs8eexq31etkjd3v98 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.512+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists payments 
+       add constraint FKmnudkcsqmeel6ig92115cl6pm 
+       foreign key (fee_id) 
+       references fees
+Hibernate: 
+    alter table if exists payments 
+       add constraint FKmnudkcsqmeel6ig92115cl6pm 
+       foreign key (fee_id) 
+       references fees
+2025-08-29T13:45:23.514+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists question_options 
+       add constraint FK1ov8llw8hk3lkvadb6xfchcod 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists question_options 
+       add constraint FK1ov8llw8hk3lkvadb6xfchcod 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.514+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists question_options 
+       add constraint FKsb9v00wdrgc9qojtjkv7e1gkp 
+       foreign key (question_id) 
+       references questions
+Hibernate: 
+    alter table if exists question_options 
+       add constraint FKsb9v00wdrgc9qojtjkv7e1gkp 
+       foreign key (question_id) 
+       references questions
+2025-08-29T13:45:23.518+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists questions 
+       add constraint FKkygyd7jugqikrxobovsa5gkg 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists questions 
+       add constraint FKkygyd7jugqikrxobovsa5gkg 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.520+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists questions 
+       add constraint FKrk78bmt53fns7np8casqa3q44 
+       foreign key (exam_id) 
+       references exams
+Hibernate: 
+    alter table if exists questions 
+       add constraint FKrk78bmt53fns7np8casqa3q44 
+       foreign key (exam_id) 
+       references exams
+2025-08-29T13:45:23.520+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists student_answers 
+       add constraint FKll9uj3kakepgo1u7prgcunxg7 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists student_answers 
+       add constraint FKll9uj3kakepgo1u7prgcunxg7 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.523+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists student_answers 
+       add constraint FKamtkrlnpmqf98jwj0fhuaopax 
+       foreign key (exam_id) 
+       references exams
+Hibernate: 
+    alter table if exists student_answers 
+       add constraint FKamtkrlnpmqf98jwj0fhuaopax 
+       foreign key (exam_id) 
+       references exams
+2025-08-29T13:45:23.525+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists student_answers 
+       add constraint FK8nyksamccim8emu803uhf2da 
+       foreign key (question_id) 
+       references questions
+Hibernate: 
+    alter table if exists student_answers 
+       add constraint FK8nyksamccim8emu803uhf2da 
+       foreign key (question_id) 
+       references questions
+2025-08-29T13:45:23.528+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists student_answers 
+       add constraint FK7ine3irxhlo98sfub0vu686r7 
+       foreign key (student_id) 
+       references students
+Hibernate: 
+    alter table if exists student_answers 
+       add constraint FK7ine3irxhlo98sfub0vu686r7 
+       foreign key (student_id) 
+       references students
+2025-08-29T13:45:23.529+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists student_courses 
+       add constraint FKsfpq78oyrqua1h0obpl7ulc18 
+       foreign key (course_id) 
+       references courses
+Hibernate: 
+    alter table if exists student_courses 
+       add constraint FKsfpq78oyrqua1h0obpl7ulc18 
+       foreign key (course_id) 
+       references courses
+2025-08-29T13:45:23.531+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists student_courses 
+       add constraint FKwj1l0mta35u161acdl2tupoo 
+       foreign key (student_id) 
+       references students
+Hibernate: 
+    alter table if exists student_courses 
+       add constraint FKwj1l0mta35u161acdl2tupoo 
+       foreign key (student_id) 
+       references students
+2025-08-29T13:45:23.531+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists students 
+       add constraint FK9ds9fhdskic3xdnaa2artva6j 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists students 
+       add constraint FK9ds9fhdskic3xdnaa2artva6j 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.533+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists students 
+       add constraint FKdt1cjx5ve5bdabmuuf3ibrwaq 
+       foreign key (user_id) 
+       references users
+Hibernate: 
+    alter table if exists students 
+       add constraint FKdt1cjx5ve5bdabmuuf3ibrwaq 
+       foreign key (user_id) 
+       references users
+2025-08-29T13:45:23.535+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists teacher_courses 
+       add constraint FK998yb1badftsiklfh13bcw3ol 
+       foreign key (course_id) 
+       references courses
+Hibernate: 
+    alter table if exists teacher_courses 
+       add constraint FK998yb1badftsiklfh13bcw3ol 
+       foreign key (course_id) 
+       references courses
+2025-08-29T13:45:23.535+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists teacher_courses 
+       add constraint FKg5rpjxn8vjt9v81ura5taiulf 
+       foreign key (teacher_id) 
+       references teachers
+Hibernate: 
+    alter table if exists teacher_courses 
+       add constraint FKg5rpjxn8vjt9v81ura5taiulf 
+       foreign key (teacher_id) 
+       references teachers
+2025-08-29T13:45:23.538+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists teachers 
+       add constraint FKhv4ndnxsono3jlyf3ehebmiqk 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists teachers 
+       add constraint FKhv4ndnxsono3jlyf3ehebmiqk 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.539+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists teachers 
+       add constraint FKb8dct7w2j1vl1r2bpstw5isc0 
+       foreign key (user_id) 
+       references users
+Hibernate: 
+    alter table if exists teachers 
+       add constraint FKb8dct7w2j1vl1r2bpstw5isc0 
+       foreign key (user_id) 
+       references users
+2025-08-29T13:45:23.539+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists user_roles 
+       add constraint FKh8ciramu9cc9q3qcqiv4ue8a6 
+       foreign key (role_id) 
+       references roles
+Hibernate: 
+    alter table if exists user_roles 
+       add constraint FKh8ciramu9cc9q3qcqiv4ue8a6 
+       foreign key (role_id) 
+       references roles
+2025-08-29T13:45:23.539+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users
+Hibernate: 
+    alter table if exists user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users
+2025-08-29T13:45:23.539+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    alter table if exists users 
+       add constraint FK3f50dcyg88bl203une7wso2x4 
+       foreign key (center_id) 
+       references centers
+Hibernate: 
+    alter table if exists users 
+       add constraint FK3f50dcyg88bl203une7wso2x4 
+       foreign key (center_id) 
+       references centers
+2025-08-29T13:45:23.548+05:30  INFO 21304 --- [Institute Management System] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-29T13:45:24.230+05:30  INFO 21304 --- [Institute Management System] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-29T13:45:25.671+05:30  WARN 21304 --- [Institute Management System] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-29T13:45:25.932+05:30 DEBUG 21304 --- [Institute Management System] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 106 mappings in 'requestMappingHandlerMapping'
+2025-08-29T13:45:26.088+05:30 DEBUG 21304 --- [Institute Management System] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-08-29T13:45:26.121+05:30  INFO 21304 --- [Institute Management System] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@fe32f34, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55de1b68, org.springframework.security.web.context.SecurityContextHolderFilter@6d7e973b, org.springframework.security.web.header.HeaderWriterFilter@1f9c9485, org.springframework.web.filter.CorsFilter@2040722f, org.springframework.security.web.authentication.logout.LogoutFilter@5fefb35c, com.gdsc.auth.filter.JwtAuthenticationFilter@36b6ce5d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5bcc2416, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61b2ca5a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@cfec1ec, org.springframework.security.web.session.SessionManagementFilter@705b4359, org.springframework.security.web.access.ExceptionTranslationFilter@76466a5, org.springframework.security.web.access.intercept.AuthorizationFilter@7c74d262]
+2025-08-29T13:45:26.348+05:30 DEBUG 21304 --- [Institute Management System] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-08-29T13:45:26.394+05:30 DEBUG 21304 --- [Institute Management System] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-08-29T13:45:26.532+05:30  INFO 21304 --- [Institute Management System] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:institute_db'
+2025-08-29T13:45:26.604+05:30  INFO 21304 --- [Institute Management System] [           main] c.g.InstituteManagementApplicationTests  : Started InstituteManagementApplicationTests in 8.102 seconds (process running for 9.329)
+2025-08-29T13:45:26.692+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        roles r1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        roles r1_0
+2025-08-29T13:45:26.780+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        roles
+        (created_at, description, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        roles
+        (created_at, description, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+2025-08-29T13:45:26.792+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        roles
+        (created_at, description, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        roles
+        (created_at, description, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+2025-08-29T13:45:26.792+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        roles
+        (created_at, description, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        roles
+        (created_at, description, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+2025-08-29T13:45:26.798+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        roles
+        (created_at, description, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        roles
+        (created_at, description, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+2025-08-29T13:45:26.798+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        roles
+        (created_at, description, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        roles
+        (created_at, description, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, default)
+2025-08-29T13:45:26.798+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        users u1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        users u1_0
+2025-08-29T13:45:26.938+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.created_at,
+        r1_0.description,
+        r1_0.is_active,
+        r1_0.name,
+        r1_0.updated_at 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.created_at,
+        r1_0.description,
+        r1_0.is_active,
+        r1_0.name,
+        r1_0.updated_at 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+2025-08-29T13:45:27.003+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (center_id, created_at, email, first_name, is_account_non_expired, is_account_non_locked, is_active, is_credentials_non_expired, is_enabled, last_name, password, phone, updated_at, username, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        users
+        (center_id, created_at, email, first_name, is_account_non_expired, is_account_non_locked, is_active, is_credentials_non_expired, is_enabled, last_name, password, phone, updated_at, username, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.012+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        user_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+2025-08-29T13:45:27.088+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.created_at,
+        r1_0.description,
+        r1_0.is_active,
+        r1_0.name,
+        r1_0.updated_at 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.created_at,
+        r1_0.description,
+        r1_0.is_active,
+        r1_0.name,
+        r1_0.updated_at 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+2025-08-29T13:45:27.098+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (center_id, created_at, email, first_name, is_account_non_expired, is_account_non_locked, is_active, is_credentials_non_expired, is_enabled, last_name, password, phone, updated_at, username, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        users
+        (center_id, created_at, email, first_name, is_account_non_expired, is_account_non_locked, is_active, is_credentials_non_expired, is_enabled, last_name, password, phone, updated_at, username, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.098+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        user_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+2025-08-29T13:45:27.172+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.created_at,
+        r1_0.description,
+        r1_0.is_active,
+        r1_0.name,
+        r1_0.updated_at 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.created_at,
+        r1_0.description,
+        r1_0.is_active,
+        r1_0.name,
+        r1_0.updated_at 
+    from
+        roles r1_0 
+    where
+        r1_0.name=?
+2025-08-29T13:45:27.172+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (center_id, created_at, email, first_name, is_account_non_expired, is_account_non_locked, is_active, is_credentials_non_expired, is_enabled, last_name, password, phone, updated_at, username, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        users
+        (center_id, created_at, email, first_name, is_account_non_expired, is_account_non_locked, is_active, is_credentials_non_expired, is_enabled, last_name, password, phone, updated_at, username, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.172+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        user_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role_id) 
+    values
+        (?, ?)
+2025-08-29T13:45:27.178+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        course_categories cc1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        course_categories cc1_0
+2025-08-29T13:45:27.188+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        course_categories
+        (color, created_at, description, icon, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        course_categories
+        (color, created_at, description, icon, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.192+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        course_categories
+        (color, created_at, description, icon, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        course_categories
+        (color, created_at, description, icon, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.192+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        course_categories
+        (color, created_at, description, icon, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        course_categories
+        (color, created_at, description, icon, is_active, name, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.194+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        courses c1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        courses c1_0
+2025-08-29T13:45:27.198+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        cc1_0.id,
+        cc1_0.color,
+        cc1_0.created_at,
+        cc1_0.description,
+        cc1_0.icon,
+        cc1_0.is_active,
+        cc1_0.name,
+        cc1_0.updated_at 
+    from
+        course_categories cc1_0 
+    where
+        cc1_0.name=?
+Hibernate: 
+    select
+        cc1_0.id,
+        cc1_0.color,
+        cc1_0.created_at,
+        cc1_0.description,
+        cc1_0.icon,
+        cc1_0.is_active,
+        cc1_0.name,
+        cc1_0.updated_at 
+    from
+        course_categories cc1_0 
+    where
+        cc1_0.name=?
+2025-08-29T13:45:27.202+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        cc1_0.id,
+        cc1_0.color,
+        cc1_0.created_at,
+        cc1_0.description,
+        cc1_0.icon,
+        cc1_0.is_active,
+        cc1_0.name,
+        cc1_0.updated_at 
+    from
+        course_categories cc1_0 
+    where
+        cc1_0.name=?
+Hibernate: 
+    select
+        cc1_0.id,
+        cc1_0.color,
+        cc1_0.created_at,
+        cc1_0.description,
+        cc1_0.icon,
+        cc1_0.is_active,
+        cc1_0.name,
+        cc1_0.updated_at 
+    from
+        course_categories cc1_0 
+    where
+        cc1_0.name=?
+2025-08-29T13:45:27.204+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        cc1_0.id,
+        cc1_0.color,
+        cc1_0.created_at,
+        cc1_0.description,
+        cc1_0.icon,
+        cc1_0.is_active,
+        cc1_0.name,
+        cc1_0.updated_at 
+    from
+        course_categories cc1_0 
+    where
+        cc1_0.name=?
+Hibernate: 
+    select
+        cc1_0.id,
+        cc1_0.color,
+        cc1_0.created_at,
+        cc1_0.description,
+        cc1_0.icon,
+        cc1_0.is_active,
+        cc1_0.name,
+        cc1_0.updated_at 
+    from
+        course_categories cc1_0 
+    where
+        cc1_0.name=?
+2025-08-29T13:45:27.216+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        courses
+        (category_id, center_id, created_at, description, discount_percentage, duration_hours, fees, image_url, is_active, is_published, max_students, name, platforms, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        courses
+        (category_id, center_id, created_at, description, discount_percentage, duration_hours, fees, image_url, is_active, is_published, max_students, name, platforms, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.218+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        courses
+        (category_id, center_id, created_at, description, discount_percentage, duration_hours, fees, image_url, is_active, is_published, max_students, name, platforms, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        courses
+        (category_id, center_id, created_at, description, discount_percentage, duration_hours, fees, image_url, is_active, is_published, max_students, name, platforms, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.218+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        courses
+        (category_id, center_id, created_at, description, discount_percentage, duration_hours, fees, image_url, is_active, is_published, max_students, name, platforms, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        courses
+        (category_id, center_id, created_at, description, discount_percentage, duration_hours, fees, image_url, is_active, is_published, max_students, name, platforms, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.218+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        centers c1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        centers c1_0
+2025-08-29T13:45:27.233+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        centers
+        (address, capacity, city, code, country, created_at, current_enrollment, description, email, facilities, is_active, name, opening_hours, phone, postal_code, state, status, updated_at, website, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        centers
+        (address, capacity, city, code, country, created_at, current_enrollment, description, email, facilities, is_active, name, opening_hours, phone, postal_code, state, status, updated_at, website, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.238+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        centers
+        (address, capacity, city, code, country, created_at, current_enrollment, description, email, facilities, is_active, name, opening_hours, phone, postal_code, state, status, updated_at, website, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        centers
+        (address, capacity, city, code, country, created_at, current_enrollment, description, email, facilities, is_active, name, opening_hours, phone, postal_code, state, status, updated_at, website, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.238+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        students s1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        students s1_0
+2025-08-29T13:45:27.246+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.center_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_account_non_expired,
+        u1_0.is_account_non_locked,
+        u1_0.is_active,
+        u1_0.is_credentials_non_expired,
+        u1_0.is_enabled,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.center_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_account_non_expired,
+        u1_0.is_account_non_locked,
+        u1_0.is_active,
+        u1_0.is_credentials_non_expired,
+        u1_0.is_enabled,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-08-29T13:45:27.248+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.created_at,
+        r1_1.description,
+        r1_1.is_active,
+        r1_1.name,
+        r1_1.updated_at 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.created_at,
+        r1_1.description,
+        r1_1.is_active,
+        r1_1.name,
+        r1_1.updated_at 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-08-29T13:45:27.253+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.address,
+        c1_0.capacity,
+        c1_0.city,
+        c1_0.code,
+        c1_0.country,
+        c1_0.created_at,
+        c1_0.current_enrollment,
+        c1_0.description,
+        c1_0.email,
+        c1_0.facilities,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.opening_hours,
+        c1_0.phone,
+        c1_0.postal_code,
+        c1_0.state,
+        c1_0.status,
+        c1_0.updated_at,
+        c1_0.website 
+    from
+        centers c1_0 
+    where
+        c1_0.name=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.address,
+        c1_0.capacity,
+        c1_0.city,
+        c1_0.code,
+        c1_0.country,
+        c1_0.created_at,
+        c1_0.current_enrollment,
+        c1_0.description,
+        c1_0.email,
+        c1_0.facilities,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.opening_hours,
+        c1_0.phone,
+        c1_0.postal_code,
+        c1_0.state,
+        c1_0.status,
+        c1_0.updated_at,
+        c1_0.website 
+    from
+        centers c1_0 
+    where
+        c1_0.name=?
+2025-08-29T13:45:27.268+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        students
+        (address, center_id, city, country, created_at, date_of_birth, email, emergency_contact, enrollment_date, first_name, gender, graduation_date, is_active, last_name, parent_name, parent_phone, phone, postal_code, state, status, updated_at, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        students
+        (address, center_id, city, country, created_at, date_of_birth, email, emergency_contact, enrollment_date, first_name, gender, graduation_date, is_active, last_name, parent_name, parent_phone, phone, postal_code, state, status, updated_at, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2025-08-29T13:45:27.268+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        count(*) 
+    from
+        teachers t1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        teachers t1_0
+2025-08-29T13:45:27.277+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.center_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_account_non_expired,
+        u1_0.is_account_non_locked,
+        u1_0.is_active,
+        u1_0.is_credentials_non_expired,
+        u1_0.is_enabled,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.center_id,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.first_name,
+        u1_0.is_account_non_expired,
+        u1_0.is_account_non_locked,
+        u1_0.is_active,
+        u1_0.is_credentials_non_expired,
+        u1_0.is_enabled,
+        u1_0.last_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.username=?
+2025-08-29T13:45:27.278+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.created_at,
+        r1_1.description,
+        r1_1.is_active,
+        r1_1.name,
+        r1_1.updated_at 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.created_at,
+        r1_1.description,
+        r1_1.is_active,
+        r1_1.name,
+        r1_1.updated_at 
+    from
+        user_roles r1_0 
+    join
+        roles r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2025-08-29T13:45:27.282+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.address,
+        c1_0.capacity,
+        c1_0.city,
+        c1_0.code,
+        c1_0.country,
+        c1_0.created_at,
+        c1_0.current_enrollment,
+        c1_0.description,
+        c1_0.email,
+        c1_0.facilities,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.opening_hours,
+        c1_0.phone,
+        c1_0.postal_code,
+        c1_0.state,
+        c1_0.status,
+        c1_0.updated_at,
+        c1_0.website 
+    from
+        centers c1_0 
+    where
+        c1_0.name=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.address,
+        c1_0.capacity,
+        c1_0.city,
+        c1_0.code,
+        c1_0.country,
+        c1_0.created_at,
+        c1_0.current_enrollment,
+        c1_0.description,
+        c1_0.email,
+        c1_0.facilities,
+        c1_0.is_active,
+        c1_0.name,
+        c1_0.opening_hours,
+        c1_0.phone,
+        c1_0.postal_code,
+        c1_0.state,
+        c1_0.status,
+        c1_0.updated_at,
+        c1_0.website 
+    from
+        centers c1_0 
+    where
+        c1_0.name=?
+2025-08-29T13:45:27.310+05:30 DEBUG 21304 --- [Institute Management System] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        teachers
+        (address, center_id, city, country, created_at, date_of_birth, email, experience, expertise, first_name, gender, hourly_rate, is_active, joining_date, last_name, phone, postal_code, qualifications, state, status, updated_at, user_id, years_of_experience, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        teachers
+        (address, center_id, city, country, created_at, date_of_birth, email, experience, expertise, first_name, gender, hourly_rate, is_active, joining_date, last_name, phone, postal_code, qualifications, state, status, updated_at, user_id, years_of_experience, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+]]></system-out>
+    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\sstur\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+</testsuite>
