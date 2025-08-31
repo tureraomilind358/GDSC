@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -20,6 +21,13 @@ public class UserService {
     public List<UserDto> getAllUsers() {
         List<User> users = userRepository.findAll();
         return users.stream()
+                .map(this::mapToDto)
+                .collect(Collectors.toList());
+    }
+
+    public List<UserDto> getAllUserByUserName(String username) {
+        Optional<User> byUsername = userRepository.findByUsername(username);
+        return byUsername.stream()
                 .map(this::mapToDto)
                 .collect(Collectors.toList());
     }

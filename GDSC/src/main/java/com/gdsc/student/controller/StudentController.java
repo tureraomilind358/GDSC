@@ -72,7 +72,7 @@ public class StudentController {
     }
 
     @GetMapping("/center/{centerId}")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF') or hasRole('CENTER')")
     @Operation(summary = "Get center students", description = "Get all students for a specific center (Admin/Staff only)")
     public ResponseEntity<ApiResponse<List<StudentDto>>> getStudentsByCenter(@PathVariable Long centerId) {
         List<StudentDto> students = studentService.getStudentsByCenter(centerId);

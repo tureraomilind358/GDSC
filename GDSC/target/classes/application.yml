@@ -3,7 +3,8 @@ spring:
     name: Institute Management System
   
   datasource:
-    url: jdbc:h2:mem:institute_db
+#    url: jdbc:h2:mem:institute_db
+    url: jdbc:h2:file:./data/institute_db
     driver-class-name: org.h2.Driver
     username: sa
     password: password
@@ -15,7 +16,7 @@ spring:
   
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
