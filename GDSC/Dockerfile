@@ -1,33 +1,28 @@
-# Use OpenJDK 17 as base image
-FROM openjdk:17-jdk-slim
-
-# Set working directory
+# ============================
+# 1. Build Stage
+# ============================
+FROM maven:3.9.4-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy the Maven wrapper and pom.xml
-COPY .mvn/ .mvn/
-COPY mvnw pom.xml ./
+# Copy pom.xml and download dependencies first (for better caching)
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
 
-# Download dependencies
-RUN ./mvnw dependency:go-offline -B
-
-# Copy source code
+# Copy the rest of the project and build
 COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Build the application
-RUN ./mvnw clean package -DskipTests
+# ============================
+# 2. Runtime Stage
+# ============================
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
 
-# Create a non-root user
-RUN addgroup --system javauser && adduser --system --ingroup javauser javauser
+# Copy the jar from the build stage
+COPY --from=build /app/target/*.jar app.jar
 
-# Change ownership of the app directory
-RUN chown -R javauser:javauser /app
-
-# Switch to non-root user
-USER javauser
-
-# Expose port
+# Expose the port Render provides (default 8080, overridden by $PORT)
 EXPOSE 8080
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "target/institute-management-system-1.0.0.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
