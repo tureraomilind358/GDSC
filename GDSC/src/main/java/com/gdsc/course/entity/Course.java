@@ -60,7 +60,6 @@ public class Course extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
     private CourseCategory category;
-
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
         name = "course_teachers",

@@ -22,7 +22,6 @@ public class User extends BaseEntity {
     @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters")
     @Column(name = "username", nullable = false, unique = true)
     private String username;
-
     @NotBlank(message = "Email is required")
     @Email(message = "Email should be valid")
     @Column(name = "email", nullable = false, unique = true)
@@ -94,7 +93,7 @@ public class User extends BaseEntity {
         this.students.add(student);
         student.setUser(this);
     }
-    
+
     public void removeStudent(com.gdsc.student.entity.Student student) {
         this.students.remove(student);
         student.setUser(null);

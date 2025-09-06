@@ -61,6 +61,7 @@ com\gdsc\certification\controller\CertificationController.class
 com\gdsc\course\service\CourseService.class
 com\gdsc\enquiry\dto\EnquiryDto.class
 com\gdsc\auth\dto\AuthRequest$AuthRequestBuilder.class
+com\gdsc\common\exception\DuplicateResourceException.class
 com\gdsc\InstituteManagementApplication.class
 com\gdsc\fee\service\FeeService.class
 com\gdsc\enquiry\entity\Enquiry$EnquirySource.class

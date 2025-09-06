@@ -1,5 +1,6 @@
 package com.gdsc.course.service;
 
+import com.gdsc.common.exception.DuplicateResourceException;
 import com.gdsc.common.exception.ResourceNotFoundException;
 import com.gdsc.course.dto.CourseCategoryDto;
 import com.gdsc.course.entity.CourseCategory;
@@ -29,6 +30,11 @@ public class CourseCategoryService {
     }
 
     public CourseCategoryDto createCategory(CourseCategoryDto categoryDto) {
+        // Validate for duplicate category name
+        if (categoryDto.getName() != null && courseCategoryRepository.existsByName(categoryDto.getName())) {
+            throw new DuplicateResourceException("CourseCategory", "name", categoryDto.getName());
+        }
+        
         CourseCategory category = convertToEntity(categoryDto);
         CourseCategory savedCategory = courseCategoryRepository.save(category);
         return convertToDto(savedCategory);
@@ -37,6 +43,13 @@ public class CourseCategoryService {
     public CourseCategoryDto updateCategory(Long id, CourseCategoryDto categoryDto) {
         CourseCategory existingCategory = courseCategoryRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("CourseCategory", "id", id));
+        
+        // Validate for duplicate category name (only if name is being changed)
+        if (categoryDto.getName() != null && !categoryDto.getName().equals(existingCategory.getName())) {
+            if (courseCategoryRepository.existsByName(categoryDto.getName())) {
+                throw new DuplicateResourceException("CourseCategory", "name", categoryDto.getName());
+            }
+        }
         
         existingCategory.setName(categoryDto.getName());
         existingCategory.setDescription(categoryDto.getDescription());

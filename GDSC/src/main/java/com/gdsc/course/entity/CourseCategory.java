@@ -30,7 +30,8 @@ public class CourseCategory extends BaseEntity {
 
     @Column(name = "color")
     private String color;
+//
+//    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<Course> courses = new ArrayList<>();
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Course> courses = new ArrayList<>();
 }

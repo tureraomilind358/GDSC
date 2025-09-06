@@ -22,7 +22,7 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping
-    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF') or hasRole('CENTER')")
     @Operation(summary = "Get all students", description = "Retrieve all students (Admin/Staff only)")
     public ResponseEntity<ApiResponse<List<StudentDto>>> getAllStudents() {
         List<StudentDto> students = studentService.getAllStudents();
@@ -30,7 +30,7 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF') or @studentSecurityService.isOwner(#id)")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF') or hasRole('CENTER') or @studentSecurityService.isOwner(#id)")
     @Operation(summary = "Get student by ID", description = "Retrieve a specific student by ID")
     public ResponseEntity<ApiResponse<StudentDto>> getStudentById(@PathVariable Long id) {
         StudentDto student = studentService.getStudentById(id);
@@ -38,7 +38,7 @@ public class StudentController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF') or hasRole('CENTER')")
     @Operation(summary = "Create new student", description = "Create a new student (Admin/Staff only)")
     public ResponseEntity<ApiResponse<StudentDto>> createStudent(@Valid @RequestBody StudentDto studentDto) {
         StudentDto createdStudent = studentService.createStudent(studentDto);
@@ -46,7 +46,7 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF') or @studentSecurityService.isOwner(#id)")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF') or hasRole('CENTER') or @studentSecurityService.isOwner(#id)")
     @Operation(summary = "Update student", description = "Update an existing student")
     public ResponseEntity<ApiResponse<StudentDto>> updateStudent(
             @PathVariable Long id, 
@@ -56,7 +56,7 @@ public class StudentController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('CENTER')")
     @Operation(summary = "Delete student", description = "Delete a student (Admin only)")
     public ResponseEntity<ApiResponse<String>> deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
@@ -64,7 +64,7 @@ public class StudentController {
     }
 
     @GetMapping("/search")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF') or hasRole('CENTER')")
     @Operation(summary = "Search students", description = "Search students by keyword (Admin/Staff only)")
     public ResponseEntity<ApiResponse<List<StudentDto>>> searchStudents(@RequestParam String keyword) {
         List<StudentDto> students = studentService.searchStudents(keyword);
